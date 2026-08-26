@@ -5,8 +5,7 @@ function diff(target: number) {
   const total = Math.max(0, target - Date.now());
   return {
     total,
-    dias: Math.floor(total / 86400000),
-    horas: Math.floor((total / 3600000) % 24),
+    horas: Math.floor(total / 3600000),
     minutos: Math.floor((total / 60000) % 60),
     segundos: Math.floor((total / 1000) % 60),
   };
@@ -24,7 +23,6 @@ export function Countdown({ size = "lg" }: { size?: "lg" | "sm" }) {
   }, [target]);
 
   const items = [
-    { label: "días", value: t.dias },
     { label: "horas", value: t.horas },
     { label: "min", value: t.minutos },
     { label: "seg", value: t.segundos },
@@ -37,7 +35,7 @@ export function Countdown({ size = "lg" }: { size?: "lg" | "sm" }) {
         className="font-sans text-xs tracking-[0.18em] text-muted-foreground uppercase"
       >
         {mounted
-          ? `Faltan ${t.dias}d ${String(t.horas).padStart(2, "0")}h ${String(t.minutos).padStart(2, "0")}m`
+          ? `Faltan ${String(t.horas).padStart(2, "0")}h ${String(t.minutos).padStart(2, "0")}m`
           : "20 de septiembre"}
       </span>
     );
