@@ -121,7 +121,7 @@ function Index() {
 
           <Reveal className="mx-auto mt-14 max-w-3xl text-center">
             <p className="eyebrow">
-              Un encuentro íntimo en vivo · 20 de septiembre · Cupos limitados
+              Te invito a un encuentro íntimo en vivo · 20 de septiembre · Cupos limitados
             </p>
             <h1 className="mt-6 text-[2.2rem] text-forest sm:text-5xl lg:text-[3.6rem]">
               Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
@@ -129,7 +129,7 @@ function Index() {
             <p className="mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
               Esta clase no es para todas. Es para la mujer que ya probó de todo, que sigue
               inflamada, sin energía y sin respuestas —y que está lista, por fin, de sanar desde
-              la raíz. Una sola función. En vivo. Con Macarena Cárdenas.
+              la raíz. Una sola función. En vivo. Conmigo.
             </p>
 
             <p className="mt-8 text-sm tracking-wide text-forest">
@@ -150,7 +150,7 @@ function Index() {
           <Reveal>
             <p className="eyebrow">Te entiendo</p>
             <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Si esto te suena, ya sabes por qué estás aquí
+              Yo también estuve ahí. Sé lo que se siente.
             </h2>
           </Reveal>
           <ul className="mt-12 space-y-8">
@@ -164,7 +164,7 @@ function Index() {
             <p className="mt-16 text-center font-serif text-2xl leading-snug text-forest sm:text-3xl">
               No es falta de voluntad.
               <br />
-              Nadie te enseñó a mirar la raíz.
+              Te enseñaron a mirar las ramas, no la raíz.
             </p>
           </Reveal>
         </div>
@@ -176,7 +176,7 @@ function Index() {
           <Reveal>
             <p className="eyebrow">La clase</p>
             <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Lo que nadie te había explicado así
+              Lo que te voy a contar en una hora juntas
             </h2>
           </Reveal>
           <ol className="mt-12 space-y-8">
@@ -193,7 +193,8 @@ function Index() {
           </ol>
           <Reveal delay={120}>
             <p className="mt-12 text-base text-muted-foreground">
-              Sin humo. Sin recetas milagro. Solo el mapa que te faltaba.
+              Sin humo. Sin recetas milagro. Solo lo que yo aprendí, validé en cientos de mujeres y
+              hoy te comparto.
             </p>
           </Reveal>
           <Reveal delay={160} className="mt-10">
@@ -223,13 +224,13 @@ function Index() {
           </Reveal>
           <Reveal delay={120}>
             <p className="eyebrow text-gold">Quién te va a guiar</p>
-            <h2 className="mt-4 text-3xl sm:text-4xl">De las pasarelas a la esencia</h2>
+            <h2 className="mt-4 text-3xl sm:text-4xl">Soy Macarena Cárdenas</h2>
             <p className="mt-6 text-base text-forest-foreground/85">
-              Macarena Cárdenas dejó atrás el mundo de la belleza —Miss Teen Colombia, Modelo del
-              Año, televisión y moda internacional— para dedicar su vida a lo único que
-              realmente importa: entender por qué nos enfermamos y cómo volver a la raíz. Se
-              formó en nutrición clínica, salud hormonal, medicina integrativa, biodescodificación
-              y ayurveda, en España y Bali. Su filosofía: la salud como soberanía.
+              Dejé atrás el mundo de la belleza —Miss Teen Colombia, Modelo del Año, televisión y
+              moda internacional— para dedicar mi vida a lo único que realmente importa: entender
+              por qué nos enfermamos y cómo volver a la raíz. Soy colombiana, me formé en nutrición
+              clínica, salud hormonal, medicina integrativa, biodescodificación y ayurveda, en
+              España y Bali. Mi filosofía: la salud como soberanía.
             </p>
             <blockquote className="mt-10 border-l border-gold pl-6 font-serif text-2xl text-gold sm:text-3xl">
               "Donde no llega la medicina convencional, ahí empiezo yo."
@@ -254,7 +255,7 @@ function Index() {
           <Reveal>
             <p className="eyebrow">Testimonios</p>
             <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Mujeres que ya caminaron este camino
+              Ellas también confiaron en mi voz
             </h2>
           </Reveal>
           {/* NOTA DEV: estructura lista para reemplazar por testimonios reales */}
@@ -287,7 +288,7 @@ function Index() {
           <Reveal>
             <p className="eyebrow text-gold">Una sola función</p>
             <h2 className="mt-4 text-3xl sm:text-[2.6rem]">
-              Puedes seguir igual. O puedes reservar tu lugar antes de que se acaben.
+              Puedes seguir igual. O puedes reservar tu lugar conmigo antes de que se acaben.
             </h2>
             <p className="mt-6 text-base text-forest-foreground/80">
               Es gratis. Es en vivo. Es con cupos limitados —y cuando se cierren, se cierran.
