@@ -1,10 +1,4 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  Accordion,
-  AccordionContent,
-  AccordionItem,
-  AccordionTrigger,
-} from "@/components/ui/accordion";
 import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
@@ -12,7 +6,6 @@ import {
   EVENT_PLATFORM,
   EVENT_TIME_LABEL,
   EVENT_TIMEZONE_LABEL,
-  REPLAY_ANSWER,
   SOCIAL_LINKS,
   TESTIMONIALS,
 } from "@/lib/event-config";
@@ -67,23 +60,6 @@ const credentials = [
   "Medicina Integrativa",
   "Biodescodificación",
   "Ayurveda",
-];
-
-const faqs = [
-  {
-    q: "¿Cuándo y dónde es?",
-    a: `El 20 de septiembre de 2026, ${EVENT_TIME_LABEL} (${EVENT_TIMEZONE_LABEL}), en vivo por ${EVENT_PLATFORM}.`,
-  },
-  { q: "¿Tiene costo?", a: "Es gratis. Los cupos, limitados. Solo las registradas reciben acceso." },
-  { q: "¿Queda grabada?", a: REPLAY_ANSWER },
-  {
-    q: "¿Necesito conocimientos previos?",
-    a: "No. Solo estar cansada de seguir cansada.",
-  },
-  {
-    q: "¿Esto reemplaza una consulta médica?",
-    a: "No. Es una clase con fines educativos e informativos.",
-  },
 ];
 
 function GoldButton({
@@ -304,29 +280,6 @@ function Index() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="border-t border-border/60 py-24">
-        <div className="mx-auto max-w-2xl px-5">
-          <Reveal>
-            <p className="eyebrow">Preguntas frecuentes</p>
-            <h2 className="mt-4 text-3xl text-forest sm:text-4xl">Antes de reservar</h2>
-          </Reveal>
-          <Reveal delay={100}>
-            <Accordion type="single" collapsible className="mt-8">
-              {faqs.map((f) => (
-                <AccordionItem key={f.q} value={f.q}>
-                  <AccordionTrigger className="text-left font-serif text-xl text-forest">
-                    {f.q}
-                  </AccordionTrigger>
-                  <AccordionContent className="text-base text-muted-foreground">
-                    {f.a}
-                  </AccordionContent>
-                </AccordionItem>
-              ))}
-            </Accordion>
-          </Reveal>
-        </div>
-      </section>
 
       {/* CTA FINAL */}
       <section className="bg-forest py-24 text-forest-foreground">
