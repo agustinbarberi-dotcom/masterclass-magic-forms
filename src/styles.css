@@ -46,8 +46,8 @@
   --color-forest: var(--forest);
   --color-forest-foreground: var(--forest-foreground);
   --color-cream: var(--cream);
-  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
-  --font-sans: "Karla", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Fraunces", ui-serif, Georgia, serif;
+  --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --shadow-soft: 0 18px 50px -24px oklch(0.32 0.05 60 / 0.28);
   --shadow-gold: 0 14px 34px -14px oklch(0.72 0.13 75 / 0.45);
 }
@@ -134,9 +134,13 @@
   h3,
   blockquote {
     font-family: var(--font-serif);
-    font-weight: 300;
-    line-height: 1.12;
-    letter-spacing: -0.01em;
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.02em;
+  }
+
+  h1 {
+    font-weight: 900;
   }
 }
 
@@ -145,7 +149,7 @@
   letter-spacing: 0.24em;
   text-transform: uppercase;
   font-weight: 600;
-  color: var(--color-olive);
+  color: var(--color-gold);
 }
 
 @utility bg-gradient-warm {
