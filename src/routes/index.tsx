@@ -104,7 +104,7 @@ function Index() {
         </div>
       </header>
 
-      {/* HERO — opt-in debajo del header, luego el mensaje */}
+      {/* HERO — promesa principal */}
       <section className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-28">
         <img
           src={heroRoots}
@@ -115,18 +115,14 @@ function Index() {
         />
         <div className="absolute inset-0 bg-gradient-warm opacity-90" aria-hidden="true" />
         <div className="relative mx-auto max-w-5xl px-5">
-          <Reveal className="mx-auto max-w-xl">
-            <RegistrationForm id="registro" />
-          </Reveal>
-
-          <Reveal className="mx-auto mt-14 max-w-3xl text-center">
+          <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">
               Te invito a un encuentro íntimo en vivo · 20 de septiembre · Cupos limitados
             </p>
             <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
             </h1>
-            <p className="mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
+            <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
               Esta clase no es para todas. Es para la mujer que ya probó de todo, que sigue
               inflamada, sin energía y sin respuestas —y que está lista, por fin, de sanar desde
               la raíz. Una sola función. En vivo. Conmigo.
@@ -137,10 +133,46 @@ function Index() {
               {EVENT_PLATFORM}
             </p>
 
-            <div className="mt-8">
+            <div className="mt-8 flex justify-center">
               <Countdown />
             </div>
+
+            <div className="mt-10">
+              <a
+                href="#registro"
+                className="inline-flex rounded-full bg-forest px-8 py-3.5 text-sm font-semibold tracking-wide text-forest-foreground shadow-soft transition-colors hover:bg-forest/90"
+              >
+                Reservar mi lugar
+              </a>
+            </div>
           </Reveal>
+        </div>
+      </section>
+
+      {/* REGISTRO — segunda sección: promesa + formulario */}
+      <section id="registro" className="relative overflow-hidden py-24 sm:py-28">
+        <div className="absolute inset-0 bg-gradient-warm opacity-90" aria-hidden="true" />
+        <div className="relative mx-auto max-w-5xl px-5">
+          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
+            <Reveal>
+              <p className="eyebrow">Una sola función. En vivo. Gratis.</p>
+              <h2 className="mt-4 text-3xl font-black tracking-tight text-forest sm:text-4xl lg:text-[2.6rem]">
+                Reservá tu lugar antes de que se acaben los cupos.
+              </h2>
+              <p className="mt-6 text-base text-muted-foreground sm:text-lg">
+                Dejame tu nombre, email y WhatsApp. Te mando el acceso a la clase y un recordatorio
+                el día del evento. No te pido tarjeta. Solo tu decisión de estar.
+              </p>
+              <p className="mt-6 text-sm tracking-wide text-forest">
+                20 de septiembre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
+                {EVENT_PLATFORM}
+              </p>
+            </Reveal>
+
+            <Reveal delay={120}>
+              <RegistrationForm id="registro-form" />
+            </Reveal>
+          </div>
         </div>
       </section>
 
