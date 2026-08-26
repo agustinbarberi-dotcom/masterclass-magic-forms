@@ -329,7 +329,7 @@ function Index() {
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <p className="eyebrow text-gold">Una sola función</p>
+            <p className="eyebrow text-gold">Evento único y exclusivo</p>
             <h2 className="mt-4 text-3xl sm:text-[2.6rem]">
               Puedes seguir igual. O puedes reservar tu lugar conmigo antes de que se acaben.
             </h2>
