@@ -123,7 +123,7 @@ function Index() {
             <p className="eyebrow">
               Te invito a un encuentro íntimo en vivo · 20 de septiembre · Cupos limitados
             </p>
-            <h1 className="mt-6 text-[2.2rem] text-forest sm:text-5xl lg:text-[3.6rem]">
+            <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
             </h1>
             <p className="mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
@@ -156,12 +156,14 @@ function Index() {
           <ul className="mt-12 space-y-8">
             {painPoints.map((text, i) => (
               <Reveal as="li" key={text} delay={i * 80}>
-                <p className="border-l border-gold pl-6 text-lg text-foreground/90">{text}</p>
+                <p className="border-l border-gold pl-6 text-lg font-medium text-foreground/90">
+                  {text}
+                </p>
               </Reveal>
             ))}
           </ul>
           <Reveal delay={140}>
-            <p className="mt-16 text-center font-serif text-2xl leading-snug text-forest sm:text-3xl">
+            <p className="mt-16 text-center font-serif text-2xl font-bold leading-snug text-forest sm:text-3xl">
               No es falta de voluntad.
               <br />
               Te enseñaron a mirar las ramas, no la raíz.
@@ -183,10 +185,10 @@ function Index() {
             {learnings.map((text, i) => (
               <Reveal as="li" key={text} delay={i * 80}>
                 <div className="flex gap-6">
-                  <span className="font-serif text-2xl text-gold" aria-hidden="true">
+                  <span className="font-serif text-2xl font-bold text-gold" aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
-                  <p className="text-lg text-foreground/90">{text}</p>
+                  <p className="text-lg font-medium text-foreground/90">{text}</p>
                 </div>
               </Reveal>
             ))}
