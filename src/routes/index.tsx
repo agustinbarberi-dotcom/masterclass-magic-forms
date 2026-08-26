@@ -117,7 +117,7 @@ function Index() {
         <div className="relative mx-auto max-w-5xl px-5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">
-              Te invito a un encuentro íntimo en vivo · 20 de septiembre · Cupos limitados
+              Evento único y exclusivo · 20 de septiembre · Cupos limitados
             </p>
             <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
@@ -125,7 +125,7 @@ function Index() {
             <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
               Esta clase no es para todas. Es para la mujer que ya probó de todo, que sigue
               inflamada, sin energía y sin respuestas —y que está lista, por fin, de sanar desde
-              la raíz. Una sola función. En vivo. Conmigo.
+              la raíz. Evento único y exclusivo. En vivo. Conmigo.
             </p>
 
             <p className="mt-8 text-sm tracking-wide text-forest">
