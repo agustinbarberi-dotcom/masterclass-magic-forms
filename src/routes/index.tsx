@@ -224,13 +224,13 @@ function Index() {
           </Reveal>
           <Reveal delay={120}>
             <p className="eyebrow text-gold">Quién te va a guiar</p>
-            <h2 className="mt-4 text-3xl sm:text-4xl">De las pasarelas a la esencia</h2>
+            <h2 className="mt-4 text-3xl sm:text-4xl">Soy Macarena Cárdenas</h2>
             <p className="mt-6 text-base text-forest-foreground/85">
-              Macarena Cárdenas dejó atrás el mundo de la belleza —Miss Teen Colombia, Modelo del
-              Año, televisión y moda internacional— para dedicar su vida a lo único que
-              realmente importa: entender por qué nos enfermamos y cómo volver a la raíz. Se
-              formó en nutrición clínica, salud hormonal, medicina integrativa, biodescodificación
-              y ayurveda, en España y Bali. Su filosofía: la salud como soberanía.
+              Dejé atrás el mundo de la belleza —Miss Teen Colombia, Modelo del Año, televisión y
+              moda internacional— para dedicar mi vida a lo único que realmente importa: entender
+              por qué nos enfermamos y cómo volver a la raíz. Soy colombiana, me formé en nutrición
+              clínica, salud hormonal, medicina integrativa, biodescodificación y ayurveda, en
+              España y Bali. Mi filosofía: la salud como soberanía.
             </p>
             <blockquote className="mt-10 border-l border-gold pl-6 font-serif text-2xl text-gold sm:text-3xl">
               "Donde no llega la medicina convencional, ahí empiezo yo."
