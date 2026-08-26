@@ -255,7 +255,7 @@ function Index() {
           <Reveal>
             <p className="eyebrow">Testimonios</p>
             <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Mujeres que ya caminaron este camino
+              Ellas también confiaron en mi voz
             </h2>
           </Reveal>
           {/* NOTA DEV: estructura lista para reemplazar por testimonios reales */}
@@ -288,7 +288,7 @@ function Index() {
           <Reveal>
             <p className="eyebrow text-gold">Una sola función</p>
             <h2 className="mt-4 text-3xl sm:text-[2.6rem]">
-              Puedes seguir igual. O puedes reservar tu lugar antes de que se acaben.
+              Puedes seguir igual. O puedes reservar tu lugar conmigo antes de que se acaben.
             </h2>
             <p className="mt-6 text-base text-forest-foreground/80">
               Es gratis. Es en vivo. Es con cupos limitados —y cuando se cierren, se cierran.
