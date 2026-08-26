@@ -239,9 +239,9 @@ function Index() {
 
       {/* QUIÉN TE VA A GUIAR */}
       <section className="bg-forest py-24 text-forest-foreground">
-        <div className="mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+        <div className="mx-auto grid max-w-5xl gap-10 px-5 lg:grid-cols-[0.55fr_1fr] lg:items-start">
           <Reveal>
-            <figure className="overflow-hidden rounded-2xl border border-gold/30">
+            <figure className="overflow-hidden rounded-2xl border border-gold/30 lg:max-w-[280px]">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
                 src={macaPortrait}
@@ -249,7 +249,7 @@ function Index() {
                 width={1008}
                 height={1312}
                 loading="lazy"
-                className="h-full w-full object-cover"
+                className="h-auto w-full object-cover"
               />
               <figcaption className="bg-forest-foreground/10 px-4 py-2 text-center text-xs tracking-[0.18em] uppercase">
                 [FOTO DE MACA]
