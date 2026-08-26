@@ -117,7 +117,7 @@ function Index() {
         <div className="relative mx-auto max-w-5xl px-5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">
-              Te invito a un encuentro íntimo en vivo · 20 de septiembre · Cupos limitados
+              Evento único y exclusivo · 20 de septiembre · Cupos limitados
             </p>
             <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
@@ -125,7 +125,7 @@ function Index() {
             <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
               Esta clase no es para todas. Es para la mujer que ya probó de todo, que sigue
               inflamada, sin energía y sin respuestas —y que está lista, por fin, de sanar desde
-              la raíz. Una sola función. En vivo. Conmigo.
+              la raíz. Evento único y exclusivo. En vivo. Conmigo.
             </p>
 
             <p className="mt-8 text-sm tracking-wide text-forest">
@@ -155,7 +155,7 @@ function Index() {
         <div className="relative mx-auto max-w-5xl px-5">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <Reveal>
-              <p className="eyebrow">Una sola función. En vivo. Gratis.</p>
+              <p className="eyebrow">Evento único y exclusivo · En vivo · Gratis.</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-forest sm:text-4xl lg:text-[2.6rem]">
                 Reservá tu lugar antes de que se acaben los cupos.
               </h2>
@@ -329,7 +329,7 @@ function Index() {
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <p className="eyebrow text-gold">Una sola función</p>
+            <p className="eyebrow text-gold">Evento único y exclusivo</p>
             <h2 className="mt-4 text-3xl sm:text-[2.6rem]">
               Puedes seguir igual. O puedes reservar tu lugar conmigo antes de que se acaben.
             </h2>
