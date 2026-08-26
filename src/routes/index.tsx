@@ -17,41 +17,28 @@ import {
   TESTIMONIALS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.jpg";
-import rootsDiagram from "@/assets/roots-diagram.png";
 import macaPortrait from "@/assets/maca-portrait.jpg";
-import {
-  Stethoscope,
-  Salad,
-  HeartCrack,
-  RefreshCcw,
-  AlertCircle,
-  Quote,
-  Calendar,
-  Clock,
-  MapPin,
-  Gift,
-  Sparkles,
-} from "lucide-react";
+import { Quote } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Clase magistral gratis · 20 de septiembre | Macasoul",
+        title: "Un encuentro en vivo · 20 de septiembre | Macasoul",
       },
       {
         name: "description",
         content:
-          "Clase en vivo y gratuita con Macarena Cárdenas: entiende por qué sigues inflamada, cansada y sin energía, y cómo sanar desde la raíz. 20 de septiembre de 2026.",
+          "Una clase íntima y en vivo con Macarena Cárdenas para mujeres que están cansadas de seguir cansadas. Cupos limitados · 20 de septiembre de 2026.",
       },
       {
         property: "og:title",
-        content: "Clase magistral gratis · 20 de septiembre | Macasoul",
+        content: "Un encuentro en vivo · 20 de septiembre | Macasoul",
       },
       {
         property: "og:description",
         content:
-          "Hormonas, inflamación y energía: sanar desde la raíz. Clase en vivo con Macarena Cárdenas. Cupos limitados.",
+          "Inflamada, agotada y sin respuestas. Una clase en vivo, con cupos limitados, para empezar a sanar desde la raíz.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -60,68 +47,38 @@ export const Route = createFileRoute("/")({
   component: Index,
 });
 
-const eventDetails = [
-  { icon: Calendar, text: "20 de septiembre de 2026" },
-  { icon: Clock, text: `${EVENT_TIME_LABEL} (${EVENT_TIMEZONE_LABEL})` },
-  { icon: MapPin, text: `En vivo por ${EVENT_PLATFORM}` },
-  { icon: Gift, text: "Gratis, cupos limitados" },
-];
-
 const painPoints = [
-  {
-    icon: Stethoscope,
-    text: 'Vas de médico en médico y te dicen que "todo está normal", pero te sigues sintiendo mal.',
-  },
-  { icon: Salad, text: "Probaste dietas, suplementos y rutinas… y nada te queda." },
-  {
-    icon: HeartCrack,
-    text: "Te cuesta reconocerte: inflamada, sin energía, con un cuerpo que ya no sientes tuyo.",
-  },
-  {
-    icon: RefreshCcw,
-    text: "Empiezas con toda la intención y a los pocos días lo abandonas —y sientes que es tu culpa.",
-  },
-  { icon: AlertCircle, text: "Vives en alerta, con ansiedad y con miedo a que los síntomas vuelvan." },
+  'Vas de médico en médico. Te dicen que "todo está normal". Y tú sabes que no es normal sentirse así.',
+  "Probaste dietas, suplementos, rutinas, reposos. Nada te queda. Nada te dura.",
+  "Te miras al espejo y no te reconoces: inflamada, agotada, con un cuerpo que ya no sientes tuyo.",
+  "Empiezas con toda la intención… y a los pocos días lo abandonas. Y te culpas. Otra vez.",
 ];
 
 const learnings = [
   'Por qué "hacer todo bien" no te está funcionando —y qué mirar en su lugar.',
-  "Cómo se conectan tus hormonas, tu inflamación, tu digestión y tu energía: el mapa completo.",
+  "El mapa completo: cómo se conectan tus hormonas, tu inflamación, tu digestión y tu energía.",
   "Los primeros pasos para desinflamar y recuperar tu energía desde la raíz.",
-  "Qué hace que empieces y abandones una y otra vez —y cómo cambiarlo sin depender de la fuerza de voluntad.",
-  "Cómo construir hoy la salud con la que quieres llegar a tus próximos 20 años.",
+  "Por qué empiezas y abandonas —y cómo cambiarlo sin depender de la fuerza de voluntad.",
 ];
 
 const credentials = [
   "Nutrición Clínica",
-  "Trofología",
   "Salud Hormonal y Menopausia",
-  "Microbiota",
   "Medicina Integrativa",
-  "Digitopuntura China",
   "Biodescodificación",
   "Ayurveda",
 ];
-
-const forWhom = [
-  "Para ti, si sientes que tu cuerpo cambió (hormonas, peso, energía) y no encuentras respuestas.",
-  "Si ya probaste de todo y sigues igual.",
-  "Si quieres dejar de tapar síntomas y entender —de verdad— la raíz.",
-  "Si quieres llegar sana y fuerte a las próximas décadas, por ti y por los tuyos.",
-];
-
-const symptoms = ["Inflamación", "Hormonas", "Cansancio", "Ansiedad", "Peso que no baja", "Digestión"];
 
 const faqs = [
   {
     q: "¿Cuándo y dónde es?",
     a: `El 20 de septiembre de 2026, ${EVENT_TIME_LABEL} (${EVENT_TIMEZONE_LABEL}), en vivo por ${EVENT_PLATFORM}.`,
   },
-  { q: "¿Tiene costo?", a: "Es totalmente gratis, con cupos limitados." },
+  { q: "¿Tiene costo?", a: "Es gratis. Los cupos, limitados. Solo las registradas reciben acceso." },
   { q: "¿Queda grabada?", a: REPLAY_ANSWER },
   {
     q: "¿Necesito conocimientos previos?",
-    a: "No. Solo las ganas de entender y cuidar tu cuerpo.",
+    a: "No. Solo estar cansada de seguir cansada.",
   },
   {
     q: "¿Esto reemplaza una consulta médica?",
@@ -149,9 +106,9 @@ function GoldButton({
 function Index() {
   return (
     <div className="min-h-screen bg-background">
-      {/* A) HEADER FIJO */}
+      {/* HEADER FIJO */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-5 py-3">
+        <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-3">
           <div className="flex flex-col">
             {/* [LOGO] */}
             <span className="font-serif text-xl tracking-[0.2em] text-forest uppercase">
@@ -168,42 +125,36 @@ function Index() {
         </div>
       </header>
 
-      {/* B) HERO */}
-      <section className="relative overflow-hidden pt-28 pb-20 sm:pt-32">
+      {/* HERO */}
+      <section className="relative overflow-hidden pt-32 pb-24 sm:pt-36">
         <img
           src={heroRoots}
           alt="Raíces de un árbol iluminadas por luz dorada en un bosque"
           width={1600}
           height={1200}
-          className="absolute inset-0 h-full w-full object-cover opacity-25"
+          className="absolute inset-0 h-full w-full object-cover opacity-20"
         />
-        <div className="absolute inset-0 bg-gradient-warm opacity-85" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
+        <div className="absolute inset-0 bg-gradient-warm opacity-90" aria-hidden="true" />
+        <div className="relative mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <Reveal>
             <p className="eyebrow">
-              Clase magistral en vivo · 20 de septiembre · Gratis
+              Un encuentro íntimo en vivo · 20 de septiembre · Cupos limitados
             </p>
-            <h1 className="mt-5 text-[2.1rem] text-forest sm:text-5xl lg:text-[3.4rem]">
-              Por qué sigues inflamada, cansada y sin energía… aunque "hagas todo bien"
+            <h1 className="mt-6 text-[2.2rem] text-forest sm:text-5xl lg:text-[3.6rem]">
+              Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
             </h1>
-            <p className="mt-6 max-w-xl text-base text-muted-foreground sm:text-lg">
-              Descubre cómo empezar a sanar desde la raíz —hormonas, inflamación y energía— en una
-              clase en vivo con Macarena Cárdenas. Donde no llega la medicina convencional, ahí
-              empieza este camino.
+            <p className="mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
+              Esta clase no es para todas. Es para la mujer que ya probó de todo, que sigue
+              inflamada, sin energía y sin respuestas —y que está lista, por fin, de sanar desde
+              la raíz. Una sola función. En vivo. Con Macarena Cárdenas.
             </p>
 
-            <ul className="mt-8 grid gap-3 sm:grid-cols-2">
-              {eventDetails.map(({ icon: Icon, text }) => (
-                <li key={text} className="flex items-center gap-3 text-sm text-forest">
-                  <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full border border-gold-soft bg-card">
-                    <Icon className="h-4 w-4 text-gold" aria-hidden="true" />
-                  </span>
-                  {text}
-                </li>
-              ))}
-            </ul>
+            <p className="mt-8 text-sm tracking-wide text-forest">
+              20 de septiembre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
+              {EVENT_PLATFORM}
+            </p>
 
-            <div className="mt-10">
+            <div className="mt-8">
               <Countdown />
             </div>
           </Reveal>
@@ -214,101 +165,67 @@ function Index() {
         </div>
       </section>
 
-      {/* C) DOLOR */}
-      <section className="border-t border-border/60 py-20">
-        <div className="mx-auto max-w-3xl px-5">
+      {/* DOLOR */}
+      <section className="border-t border-border/60 py-24">
+        <div className="mx-auto max-w-2xl px-5">
           <Reveal>
             <p className="eyebrow">Te entiendo</p>
             <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Si te pasa esto, esta clase es para ti
+              Si esto te suena, ya sabes por qué estás aquí
             </h2>
           </Reveal>
-          <ul className="mt-10 space-y-5">
-            {painPoints.map(({ icon: Icon, text }, i) => (
+          <ul className="mt-12 space-y-8">
+            {painPoints.map((text, i) => (
               <Reveal as="li" key={text} delay={i * 80}>
-                <div className="flex gap-4 rounded-xl border border-border/70 bg-card/70 p-5">
-                  <Icon className="mt-1 h-5 w-5 shrink-0 text-terracotta" aria-hidden="true" />
-                  <p className="text-base text-foreground/90">{text}</p>
-                </div>
+                <p className="border-l border-gold pl-6 text-lg text-foreground/90">{text}</p>
               </Reveal>
             ))}
           </ul>
           <Reveal delay={140}>
-            <blockquote className="mt-12 border-l-2 border-gold pl-6 text-2xl text-forest sm:text-3xl">
-              No es falta de voluntad ni de información. Es que nadie te enseñó a mirar la raíz.
-            </blockquote>
-          </Reveal>
-        </div>
-      </section>
-
-      {/* D) MECANISMO */}
-      <section className="bg-secondary/50 py-20">
-        <div className="mx-auto grid max-w-6xl items-center gap-12 px-5 lg:grid-cols-2">
-          <Reveal>
-            <p className="eyebrow">Sanar desde la raíz</p>
-            <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Tus síntomas no son problemas separados
-            </h2>
-            <p className="mt-6 text-base text-muted-foreground sm:text-lg">
-              Tu inflamación, tus hormonas, tu cansancio y tu ansiedad comparten una misma raíz.
-              Mientras trates cada síntoma por separado, nada va a funcionar de verdad. En esta
-              clase vas a entender esa raíz —y cómo empezar a ordenarla, paso a paso.
+            <p className="mt-16 text-center font-serif text-2xl leading-snug text-forest sm:text-3xl">
+              No es falta de voluntad.
+              <br />
+              Nadie te enseñó a mirar la raíz.
             </p>
           </Reveal>
-          <Reveal delay={120}>
-            <div className="rounded-2xl border border-gold-soft/70 bg-card p-7 shadow-soft">
-              <ul className="flex flex-wrap justify-center gap-2">
-                {symptoms.map((s) => (
-                  <li
-                    key={s}
-                    className="rounded-full border border-border bg-background px-4 py-1.5 text-xs tracking-wide text-muted-foreground uppercase"
-                  >
-                    {s}
-                  </li>
-                ))}
-              </ul>
-              <img
-                src={rootsDiagram}
-                alt="Ilustración de raíces que conectan todos los síntomas en una misma raíz"
-                width={1200}
-                height={1200}
-                loading="lazy"
-                className="mx-auto mt-2 w-full max-w-sm"
-              />
-              <p className="text-center font-serif text-2xl text-forest">Una misma raíz</p>
-            </div>
-          </Reveal>
         </div>
       </section>
 
-      {/* E) QUÉ VAS A DESCUBRIR */}
-      <section className="py-20">
-        <div className="mx-auto max-w-5xl px-5">
+      {/* LA CLASE */}
+      <section className="bg-secondary/50 py-24">
+        <div className="mx-auto max-w-2xl px-5">
           <Reveal>
             <p className="eyebrow">La clase</p>
             <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Qué vas a descubrir en esta clase
+              Lo que nadie te había explicado así
             </h2>
           </Reveal>
-          <div className="mt-10 grid gap-5 sm:grid-cols-2">
+          <ol className="mt-12 space-y-8">
             {learnings.map((text, i) => (
-              <Reveal as="article" key={text} delay={i * 80}>
-                <div className="h-full rounded-2xl border border-border/70 bg-card p-6 transition-shadow hover:shadow-soft">
-                  <Sparkles className="h-5 w-5 text-gold" aria-hidden="true" />
-                  <p className="mt-4 text-base text-foreground/90">{text}</p>
+              <Reveal as="li" key={text} delay={i * 80}>
+                <div className="flex gap-6">
+                  <span className="font-serif text-2xl text-gold" aria-hidden="true">
+                    {String(i + 1).padStart(2, "0")}
+                  </span>
+                  <p className="text-lg text-foreground/90">{text}</p>
                 </div>
               </Reveal>
             ))}
-          </div>
-          <Reveal delay={120} className="mt-10 text-center">
+          </ol>
+          <Reveal delay={120}>
+            <p className="mt-12 text-base text-muted-foreground">
+              Sin humo. Sin recetas milagro. Solo el mapa que te faltaba.
+            </p>
+          </Reveal>
+          <Reveal delay={160} className="mt-10">
             <GoldButton>Quiero mi lugar gratis</GoldButton>
           </Reveal>
         </div>
       </section>
 
-      {/* F) QUIÉN TE VA A GUIAR */}
-      <section className="bg-forest py-20 text-forest-foreground">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
+      {/* QUIÉN TE VA A GUIAR */}
+      <section className="bg-forest py-24 text-forest-foreground">
+        <div className="mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-[0.85fr_1.15fr] lg:items-start">
           <Reveal>
             <figure className="overflow-hidden rounded-2xl border border-gold/30">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
@@ -329,19 +246,16 @@ function Index() {
             <p className="eyebrow text-gold">Quién te va a guiar</p>
             <h2 className="mt-4 text-3xl sm:text-4xl">De las pasarelas a la esencia</h2>
             <p className="mt-6 text-base text-forest-foreground/85">
-              Macarena Cárdenas pasó del mundo de la belleza —Miss Teen Colombia, Modelo del Año,
-              presentadora de televisión y diseñadora de modas internacional, hija de Sonia Bravo
-              (Miss Chile 1969)— a dedicar su vida a comprender el diseño más profundo del ser
-              humano: su salud biológica y energética. Hoy es especialista en nutrición clínica,
-              salud hormonal y menopausia, medicina integrativa, biodescodificación y ayurveda. Se
-              formó en la Escuela de Salud Integrativa en España y como Raw Vegan Chef en Bali. Su
-              filosofía: la salud como soberanía.
+              Macarena Cárdenas dejó atrás el mundo de la belleza —Miss Teen Colombia, Modelo del
+              Año, televisión y moda internacional— para dedicar su vida a lo único que
+              realmente importa: entender por qué nos enfermamos y cómo volver a la raíz. Se
+              formó en nutrición clínica, salud hormonal, medicina integrativa, biodescodificación
+              y ayurveda, en España y Bali. Su filosofía: la salud como soberanía.
             </p>
-            <blockquote className="mt-8 border-l-2 border-gold pl-6 text-2xl text-gold sm:text-3xl">
-              "Donde no llega la medicina convencional, ahí empiezo yo: sanación desde la raíz y
-              terreno biológico."
+            <blockquote className="mt-10 border-l border-gold pl-6 font-serif text-2xl text-gold sm:text-3xl">
+              "Donde no llega la medicina convencional, ahí empiezo yo."
             </blockquote>
-            <ul className="mt-8 flex flex-wrap gap-2">
+            <ul className="mt-10 flex flex-wrap gap-2">
               {credentials.map((c) => (
                 <li
                   key={c}
@@ -355,20 +269,20 @@ function Index() {
         </div>
       </section>
 
-      {/* G) PRUEBA SOCIAL */}
-      <section className="py-20">
-        <div className="mx-auto max-w-6xl px-5">
+      {/* PRUEBA SOCIAL */}
+      <section className="py-24">
+        <div className="mx-auto max-w-5xl px-5">
           <Reveal>
             <p className="eyebrow">Testimonios</p>
             <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Lo que viven quienes ya caminaron con Maca
+              Mujeres que ya caminaron este camino
             </h2>
           </Reveal>
           {/* NOTA DEV: estructura lista para reemplazar por testimonios reales */}
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
+          <div className="mt-12 grid gap-10 md:grid-cols-3">
             {TESTIMONIALS.map((t, i) => (
               <Reveal as="article" key={t.placeholder} delay={i * 90}>
-                <figure className="h-full rounded-2xl border border-border/70 bg-card p-7">
+                <figure>
                   <Quote className="h-6 w-6 text-gold" aria-hidden="true" />
                   <blockquote className="mt-4 font-serif text-xl leading-snug text-forest">
                     {t.text}
@@ -387,35 +301,12 @@ function Index() {
         </div>
       </section>
 
-      {/* H) PARA QUIÉN ES */}
-      <section className="bg-secondary/50 py-20">
-        <div className="mx-auto max-w-3xl px-5">
-          <Reveal>
-            <p className="eyebrow">Para quién es</p>
-            <h2 className="mt-4 text-3xl text-forest sm:text-4xl">Para quién es esta clase</h2>
-          </Reveal>
-          <ul className="mt-10 space-y-4">
-            {forWhom.map((text, i) => (
-              <Reveal as="li" key={text} delay={i * 80}>
-                <div className="flex gap-4">
-                  <span
-                    className="mt-2.5 h-1.5 w-1.5 shrink-0 rounded-full bg-gold"
-                    aria-hidden="true"
-                  />
-                  <p className="text-base text-foreground/90">{text}</p>
-                </div>
-              </Reveal>
-            ))}
-          </ul>
-        </div>
-      </section>
-
-      {/* I) FAQ */}
-      <section className="py-20">
-        <div className="mx-auto max-w-3xl px-5">
+      {/* FAQ */}
+      <section className="border-t border-border/60 py-24">
+        <div className="mx-auto max-w-2xl px-5">
           <Reveal>
             <p className="eyebrow">Preguntas frecuentes</p>
-            <h2 className="mt-4 text-3xl text-forest sm:text-4xl">Resolvemos tus dudas</h2>
+            <h2 className="mt-4 text-3xl text-forest sm:text-4xl">Antes de reservar</h2>
           </Reveal>
           <Reveal delay={100}>
             <Accordion type="single" collapsible className="mt-8">
@@ -434,16 +325,16 @@ function Index() {
         </div>
       </section>
 
-      {/* J) CTA FINAL */}
-      <section className="bg-forest py-20 text-forest-foreground">
-        <div className="mx-auto grid max-w-6xl gap-12 px-5 lg:grid-cols-2 lg:items-center">
+      {/* CTA FINAL */}
+      <section className="bg-forest py-24 text-forest-foreground">
+        <div className="mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <h2 className="text-3xl sm:text-[2.6rem]">
-              El 20 de septiembre puede ser el día en que dejes de tapar síntomas y empieces a sanar
-              desde la raíz.
+            <p className="eyebrow text-gold">Una sola función</p>
+            <h2 className="mt-4 text-3xl sm:text-[2.6rem]">
+              Puedes seguir igual. O puedes reservar tu lugar antes de que se acaben.
             </h2>
             <p className="mt-6 text-base text-forest-foreground/80">
-              Reserva tu lugar. Es gratis y los cupos son limitados.
+              Es gratis. Es en vivo. Es con cupos limitados —y cuando se cierren, se cierran.
             </p>
             <div className="mt-10">
               <Countdown />
@@ -455,7 +346,7 @@ function Index() {
         </div>
       </section>
 
-      {/* K) FOOTER */}
+      {/* FOOTER */}
       <footer className="border-t border-border/60 py-12">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <p className="font-serif text-lg tracking-[0.22em] text-forest uppercase">Macasoul</p>
