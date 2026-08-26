@@ -155,7 +155,7 @@ function Index() {
         <div className="relative mx-auto max-w-5xl px-5">
           <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
             <Reveal>
-              <p className="eyebrow">Una sola función. En vivo. Gratis.</p>
+              <p className="eyebrow">Evento único y exclusivo · En vivo · Gratis.</p>
               <h2 className="mt-4 text-3xl font-black tracking-tight text-forest sm:text-4xl lg:text-[2.6rem]">
                 Reservá tu lugar antes de que se acaben los cupos.
               </h2>
