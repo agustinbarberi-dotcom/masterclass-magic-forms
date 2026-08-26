@@ -108,25 +108,28 @@ function Index() {
     <div className="min-h-screen bg-background">
       {/* HEADER FIJO */}
       <header className="fixed inset-x-0 top-0 z-50 border-b border-border/70 bg-background/85 backdrop-blur-md">
-        <div className="mx-auto flex max-w-5xl items-center justify-between gap-3 px-5 py-3">
-          <div className="flex flex-col">
+        <div className="mx-auto grid max-w-5xl grid-cols-[1fr_auto_1fr] items-center gap-3 px-5 py-3">
+          <div />
+          <div className="flex flex-col items-center text-center">
             {/* [LOGO] */}
             <span className="font-serif text-xl tracking-[0.2em] text-forest uppercase">
               Macasoul
             </span>
             <Countdown size="sm" />
           </div>
-          <a
-            href="#registro"
-            className="rounded-full border border-forest/25 px-4 py-2 text-xs font-semibold tracking-wide text-forest transition-colors hover:bg-forest hover:text-forest-foreground sm:px-5 sm:text-sm"
-          >
-            Reservar mi lugar
-          </a>
+          <div className="flex justify-end">
+            <a
+              href="#registro"
+              className="rounded-full border border-forest/25 px-4 py-2 text-xs font-semibold tracking-wide text-forest transition-colors hover:bg-forest hover:text-forest-foreground sm:px-5 sm:text-sm"
+            >
+              Reservar mi lugar
+            </a>
+          </div>
         </div>
       </header>
 
-      {/* HERO */}
-      <section className="relative overflow-hidden pt-32 pb-24 sm:pt-36">
+      {/* HERO — opt-in debajo del header, luego el mensaje */}
+      <section className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-28">
         <img
           src={heroRoots}
           alt="Raíces de un árbol iluminadas por luz dorada en un bosque"
@@ -135,8 +138,12 @@ function Index() {
           className="absolute inset-0 h-full w-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-warm opacity-90" aria-hidden="true" />
-        <div className="relative mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <Reveal>
+        <div className="relative mx-auto max-w-5xl px-5">
+          <Reveal className="mx-auto max-w-xl">
+            <RegistrationForm id="registro" />
+          </Reveal>
+
+          <Reveal className="mx-auto mt-14 max-w-3xl text-center">
             <p className="eyebrow">
               Un encuentro íntimo en vivo · 20 de septiembre · Cupos limitados
             </p>
@@ -157,10 +164,6 @@ function Index() {
             <div className="mt-8">
               <Countdown />
             </div>
-          </Reveal>
-
-          <Reveal delay={120} className="lg:pl-4">
-            <RegistrationForm id="registro" />
           </Reveal>
         </div>
       </section>
