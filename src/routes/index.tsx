@@ -223,17 +223,26 @@ function Index() {
             </figure>
           </Reveal>
           <Reveal delay={120}>
-            <p className="eyebrow text-gold">Quién te va a guiar</p>
+            <p className="eyebrow text-gold">Quién soy</p>
             <h2 className="mt-4 text-3xl sm:text-4xl">Soy Macarena Cárdenas</h2>
             <p className="mt-6 text-base text-forest-foreground/85">
-              Dejé atrás el mundo de la belleza —Miss Teen Colombia, Modelo del Año, televisión y
-              moda internacional— para dedicar mi vida a lo único que realmente importa: entender
-              por qué nos enfermamos y cómo volver a la raíz. Soy colombiana, me formé en nutrición
-              clínica, salud hormonal, medicina integrativa, biodescodificación y ayurveda, en
-              España y Bali. Mi filosofía: la salud como soberanía.
+              Nací en Chile y crecí bajo el sol del Caribe. Soy hija de Sonia Bravo (Miss Chile
+              1969), fui Miss Teen Colombia y Modelo del Año, presenté televisión y diseñé moda con
+              éxito internacional. Pero mientras vestía cuerpos ajenos, sentí un llamado más
+              profundo: entender la arquitectura biológica y espiritual del ser humano.
+            </p>
+            <p className="mt-4 text-base text-forest-foreground/85">
+              Hoy ese llamado es mi misión. Me formé en nutrición clínica, trofología, salud
+              hormonal, menopausia, microbiota, dietoterapia, digitopuntura china,
+              biodescodificación, bioneuroemoción, medicina integrativa, ayurveda, hipnoterapia,
+              reprogramación de ADN y biohacks, entre España y Bali. Mi filosofía es simple: la
+              salud es soberanía. No enfermamos por azar, sino por ignorancia sobre nuestro propio
+              templo. En Macasoul te acompaño a limpiar tu energía, purificar tu cuerpo y prosperar
+              en un cuerpo sano, libre y lleno de luz.
             </p>
             <blockquote className="mt-10 border-l border-gold pl-6 font-serif text-2xl text-gold sm:text-3xl">
-              "Donde no llega la medicina convencional, ahí empiezo yo."
+              "Donde no llega la medicina convencional, ahí empiezo yo: sanación desde la raíz y el
+              terreno biológico."
             </blockquote>
             <ul className="mt-10 flex flex-wrap gap-2">
               {credentials.map((c) => (
