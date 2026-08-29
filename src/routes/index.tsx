@@ -17,16 +17,16 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Un encuentro en vivo · 20 de septiembre | Macasoul",
+        title: "Un encuentro en vivo · 4 de octubre | Macasoul",
       },
       {
         name: "description",
         content:
-          "Una clase íntima y en vivo con Macarena Cárdenas para mujeres que están cansadas de seguir cansadas. Cupos limitados · 20 de septiembre de 2026.",
+          "Una clase íntima y en vivo con Macarena Cárdenas para mujeres que están cansadas de seguir cansadas. Cupos limitados · Domingo 4 de octubre de 2026.",
       },
       {
         property: "og:title",
-        content: "Un encuentro en vivo · 20 de septiembre | Macasoul",
+        content: "Un encuentro en vivo · 4 de octubre | Macasoul",
       },
       {
         property: "og:description",

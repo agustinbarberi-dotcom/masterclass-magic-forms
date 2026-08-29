@@ -3,8 +3,8 @@
 // ==========================================================================
 
 /** Fecha y hora exacta del evento en formato ISO con offset de zona horaria.
- *  Ejemplo: 20 de septiembre de 2026 a las 19:00 hora Colombia (UTC-5). */
-export const EVENT_DATE_ISO = "2026-09-20T19:00:00-05:00";
+ *  Domingo 4 de octubre de 2026 a las 19:00 hora Colombia (UTC-5). */
+export const EVENT_DATE_ISO = "2026-10-04T19:00:00-05:00";
 
 /** [HORA] tal como se muestra en la página */
 export const EVENT_TIME_LABEL = "[HORA]";
