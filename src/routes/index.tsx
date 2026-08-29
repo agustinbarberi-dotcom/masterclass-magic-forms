@@ -231,11 +231,11 @@ function Index() {
         </div>
       </section>
 
-      {/* QUIÉN TE VA A GUIAR */}
+      {/* QUIÉN SOY */}
       <section className="bg-forest py-24 text-forest-foreground">
-        <div className="mx-auto grid max-w-5xl gap-10 px-5 lg:grid-cols-[0.55fr_1fr] lg:items-start">
-          <Reveal>
-            <figure className="overflow-hidden rounded-2xl border border-gold/30 lg:max-w-[280px]">
+        <div className="mx-auto max-w-3xl px-5">
+          <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:gap-10 sm:text-left">
+            <Reveal className="shrink-0">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
                 src={macaPortrait}
@@ -243,48 +243,49 @@ function Index() {
                 width={1008}
                 height={1312}
                 loading="lazy"
-                className="h-auto w-full object-cover"
+                className="h-32 w-32 rounded-full border-2 border-gold/50 object-cover sm:h-40 sm:w-40"
               />
-              <figcaption className="bg-forest-foreground/10 px-4 py-2 text-center text-xs tracking-[0.18em] uppercase">
-                [FOTO DE MACA]
-              </figcaption>
-            </figure>
-          </Reveal>
-          <Reveal delay={120}>
-            <p className="eyebrow text-gold">Quién soy</p>
-            <h2 className="mt-4 text-3xl sm:text-4xl">Soy Macarena Cárdenas</h2>
-            <p className="mt-6 text-base text-forest-foreground/85">
-              Nací en Chile y crecí bajo el sol del Caribe. Soy hija de Sonia Bravo (Miss Chile
-              1969), fui Miss Teen Colombia y Modelo del Año, presenté televisión y diseñé moda con
-              éxito internacional. Pero mientras vestía cuerpos ajenos, sentí un llamado más
-              profundo: entender la arquitectura biológica y espiritual del ser humano.
-            </p>
-            <p className="mt-4 text-base text-forest-foreground/85">
-              Hoy ese llamado es mi misión. Me formé en nutrición clínica, trofología, salud
-              hormonal, menopausia, microbiota, dietoterapia, digitopuntura china,
-              biodescodificación, bioneuroemoción, medicina integrativa, ayurveda, hipnoterapia,
-              reprogramación de ADN y biohacks, entre España y Bali. Mi filosofía es simple: la
-              salud es soberanía. No enfermamos por azar, sino por ignorancia sobre nuestro propio
-              templo. En Macasoul te acompaño a limpiar tu energía, purificar tu cuerpo y prosperar
-              en un cuerpo sano, libre y lleno de luz.
-            </p>
-            <blockquote className="mt-10 border-l border-gold pl-6 font-serif text-2xl text-gold sm:text-3xl">
-              "Donde no llega la medicina convencional, ahí empiezo yo: sanación desde la raíz y el
-              terreno biológico."
-            </blockquote>
-            <ul className="mt-10 flex flex-wrap gap-2">
-              {credentials.map((c) => (
-                <li
-                  key={c}
-                  className="rounded-full border border-gold/40 px-4 py-1.5 text-xs tracking-wide text-forest-foreground/85"
-                >
-                  {c}
-                </li>
-              ))}
-            </ul>
-          </Reveal>
+            </Reveal>
+            <Reveal delay={120}>
+              <h2 className="font-serif text-3xl font-black tracking-tight sm:text-4xl">
+                Macarena Cárdenas
+              </h2>
+              <p className="mt-3 text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase">
+                Colombiana · Nutrición clínica · Salud hormonal · Medicina integrativa
+              </p>
+              <p className="mt-6 text-base text-forest-foreground/85">
+                Nací en Chile y crecí bajo el sol del Caribe. Soy hija de Sonia Bravo (Miss Chile
+                1969), fui Miss Teen Colombia y Modelo del Año, presenté televisión y diseñé moda
+                con éxito internacional. Pero mientras vestía cuerpos ajenos, sentí un llamado más
+                profundo: entender la arquitectura biológica y espiritual del ser humano.
+              </p>
+              <p className="mt-4 text-base text-forest-foreground/85">
+                Hoy ese llamado es mi misión. Me formé en nutrición clínica, trofología, salud
+                hormonal, menopausia, microbiota, dietoterapia, digitopuntura china,
+                biodescodificación, bioneuroemoción, medicina integrativa, ayurveda, hipnoterapia,
+                reprogramación de ADN y biohacks, entre España y Bali. Mi filosofía es simple: la
+                salud es soberanía. En Macasoul te acompaño a limpiar tu energía, purificar tu
+                cuerpo y prosperar en un cuerpo sano, libre y lleno de luz.
+              </p>
+              <blockquote className="mt-8 border-l-2 border-gold pl-5 text-left font-serif text-xl leading-snug text-gold sm:text-2xl">
+                "Donde no llega la medicina convencional, ahí empiezo yo: sanación desde la raíz y
+                el terreno biológico."
+              </blockquote>
+              <ul className="mt-8 flex flex-wrap justify-center gap-2 sm:justify-start">
+                {credentials.map((c) => (
+                  <li
+                    key={c}
+                    className="rounded-full border border-gold/40 px-4 py-1.5 text-xs tracking-wide text-forest-foreground/85"
+                  >
+                    {c}
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
         </div>
       </section>
+
 
       {/* PRUEBA SOCIAL */}
       <section className="py-24">
