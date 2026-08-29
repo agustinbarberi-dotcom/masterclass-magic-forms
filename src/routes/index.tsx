@@ -150,31 +150,25 @@ function Index() {
       </section>
 
       {/* REGISTRO — segunda sección: promesa + formulario */}
-      <section id="registro" className="relative overflow-hidden py-24 sm:py-28">
+      <section id="registro" className="relative overflow-hidden py-20 sm:py-24">
         <div className="absolute inset-0 bg-gradient-warm opacity-90" aria-hidden="true" />
-        <div className="relative mx-auto max-w-5xl px-5">
-          <div className="grid gap-12 lg:grid-cols-2 lg:items-center">
-            <Reveal>
-              <p className="eyebrow">Evento único y exclusivo · En vivo · Gratis.</p>
-              <h2 className="mt-4 text-3xl font-black tracking-tight text-forest sm:text-4xl lg:text-[2.6rem]">
-                Reservá tu lugar antes de que se acaben los cupos.
-              </h2>
-              <p className="mt-6 text-base text-muted-foreground sm:text-lg">
-                Dejame tu nombre, email y WhatsApp. Te mando el acceso a la clase y un recordatorio
-                el día del evento. No te pido tarjeta. Solo tu decisión de estar.
-              </p>
-              <p className="mt-6 text-sm tracking-wide text-forest">
-                20 de septiembre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
-                {EVENT_PLATFORM}
-              </p>
-            </Reveal>
+        <div className="relative mx-auto max-w-xl px-5 text-center">
+          <Reveal>
+            <h2 className="font-serif text-3xl font-black tracking-tight text-forest sm:text-4xl">
+              Reserva tu lugar
+            </h2>
+            <p className="mt-5 text-sm font-medium tracking-wide text-forest">
+              20 de septiembre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
+              {EVENT_PLATFORM} · Sin costo · Cupos limitados
+            </p>
+          </Reveal>
 
-            <Reveal delay={120}>
-              <RegistrationForm id="registro-form" />
-            </Reveal>
-          </div>
+          <Reveal delay={120} className="mt-9 text-left">
+            <RegistrationForm id="registro-form" />
+          </Reveal>
         </div>
       </section>
+
 
       {/* DOLOR */}
       <section className="border-t border-border/60 py-24">
