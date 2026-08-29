@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
-import { CheckCircle2, MessageCircle, Loader2 } from "lucide-react";
+import { Sparkles, MessageCircle, Loader2, AlertTriangle } from "lucide-react";
 import { COUNTRIES, WEBHOOK_URL, WHATSAPP_GROUP_URL } from "@/lib/event-config";
 import { cn } from "@/lib/utils";
 
@@ -8,18 +8,12 @@ const schema = z.object({
   nombre: z
     .string()
     .trim()
-    .min(2, { message: "Por favor escribe tu nombre." })
+    .min(2, { message: "Por favor escribe tu nombre completo." })
     .max(80, { message: "El nombre es demasiado largo." }),
-  email: z
-    .string()
-    .trim()
-    .min(1, { message: "Necesitamos tu email para enviarte el acceso." })
-    .email({ message: "Revisa tu email: parece que falta algo." })
-    .max(255, { message: "El email es demasiado largo." }),
   whatsapp: z
     .string()
     .trim()
-    .min(8, { message: "Incluye tu WhatsApp con código de país (ej. +52 55 1234 5678)." })
+    .min(8, { message: "Tu número necesita más dígitos (mínimo 8, con código de país)." })
     .max(25, { message: "El número es demasiado largo." })
     .regex(/^\+?[0-9\s()-]{8,25}$/, {
       message: "Usa solo números y el código de país (ej. +57 300 123 4567).",
@@ -52,7 +46,6 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
     const fd = new FormData(e.currentTarget);
     const parsed = schema.safeParse({
       nombre: String(fd.get("nombre") ?? ""),
-      email: String(fd.get("email") ?? ""),
       whatsapp: String(fd.get("whatsapp") ?? ""),
       pais: String(fd.get("pais") ?? ""),
     });
@@ -88,49 +81,52 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
     }
   }
 
+  // PÁGINA DE GRACIAS — reemplaza toda la pantalla tras el registro
   if (status === "success") {
     return (
       <div
         id={id}
-        className={cn(
-          "rounded-2xl border p-7 text-center shadow-soft",
-          tone === "dark"
-            ? "border-gold/40 bg-forest-foreground/10"
-            : "border-gold-soft bg-card",
-        )}
+        className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-background px-5 py-20"
       >
-        <CheckCircle2 className="mx-auto h-9 w-9 text-gold" aria-hidden="true" />
-        <h3
-          className={cn(
-            "mt-4 text-2xl",
-            tone === "dark" ? "text-forest-foreground" : "text-forest",
-          )}
-        >
-          ¡Listo! Tu lugar está reservado.
-        </h3>
-        <p
-          className={cn(
-            "mt-3 text-sm",
-            tone === "dark" ? "text-forest-foreground/80" : "text-muted-foreground",
-          )}
-        >
-          Revisa tu email y WhatsApp: te enviamos los detalles para conectarte el 20 de
-          septiembre.
-        </p>
-        <a
-          href={WHATSAPP_GROUP_URL}
-          target="_blank"
-          rel="noopener noreferrer"
-          className={cn(
-            "mt-6 inline-flex items-center justify-center gap-2 rounded-full border px-6 py-3 text-sm font-semibold transition-colors",
-            tone === "dark"
-              ? "border-gold text-gold hover:bg-gold hover:text-gold-foreground"
-              : "border-forest/30 text-forest hover:bg-forest hover:text-forest-foreground",
-          )}
-        >
-          <MessageCircle className="h-4 w-4" aria-hidden="true" />
-          Únete al grupo de WhatsApp
-        </a>
+        <div className="mx-auto w-full max-w-xl text-center">
+          <Sparkles className="mx-auto h-9 w-9 text-gold" aria-hidden="true" />
+          <h1 className="mt-8 font-serif text-3xl font-black leading-[1.05] tracking-tight text-forest sm:text-[2.6rem]">
+            ¡Ya estás adentro. Solo falta un paso.
+          </h1>
+
+          <p className="mt-8 text-[0.72rem] font-semibold tracking-[0.2em] text-gold uppercase">
+            Tu registro: 80% completado
+          </p>
+          <div
+            className="mx-auto mt-3 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-secondary"
+            role="progressbar"
+            aria-valuenow={80}
+            aria-valuemin={0}
+            aria-valuemax={100}
+          >
+            <div className="h-full w-[80%] rounded-full bg-gradient-gold" />
+          </div>
+
+          <p className="mx-auto mt-8 max-w-md text-base text-muted-foreground">
+            El acceso, los recordatorios y el material exclusivo llegan por WhatsApp. Únete al grupo
+            ahora para no perderte nada.
+          </p>
+
+          <a
+            href={WHATSAPP_GROUP_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-8 inline-flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-forest px-7 py-4 text-sm font-bold tracking-wide text-forest-foreground shadow-soft transition-transform hover:scale-[1.02]"
+          >
+            <MessageCircle className="h-5 w-5" aria-hidden="true" />
+            Unirme al grupo de WhatsApp →
+          </a>
+
+          <p className="mt-5 flex items-center justify-center gap-2 text-xs text-muted-foreground">
+            <AlertTriangle className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
+            Si no lo haces ahora, podrías quedarte sin el acceso y los materiales.
+          </p>
+        </div>
       </div>
     );
   }
@@ -148,7 +144,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
       <div className="space-y-4">
         <div>
           <label htmlFor={`${id}-nombre`} className={labelCls}>
-            Nombre
+            Nombre completo
           </label>
           <input
             id={`${id}-nombre`}
@@ -168,70 +164,50 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
         </div>
 
         <div>
-          <label htmlFor={`${id}-email`} className={labelCls}>
-            Email
-          </label>
-          <input
-            id={`${id}-email`}
-            name="email"
-            type="email"
-            autoComplete="email"
-            placeholder="tucorreo@ejemplo.com"
-            aria-invalid={!!errors.email}
-            aria-describedby={errors.email ? `${id}-email-error` : undefined}
-            className={fieldCls}
-          />
-          {errors.email && (
-            <p id={`${id}-email-error`} className="mt-1.5 text-sm text-destructive">
-              {errors.email}
-            </p>
-          )}
-        </div>
-
-        <div>
           <label htmlFor={`${id}-whatsapp`} className={labelCls}>
-            WhatsApp (con código de país)
+            Número de WhatsApp
           </label>
-          <input
-            id={`${id}-whatsapp`}
-            name="whatsapp"
-            type="tel"
-            inputMode="tel"
-            autoComplete="tel"
-            placeholder="+57 300 123 4567"
-            aria-invalid={!!errors.whatsapp}
-            aria-describedby={errors.whatsapp ? `${id}-whatsapp-error` : undefined}
-            className={fieldCls}
-          />
+          <div className="flex gap-2">
+            <select
+              id={`${id}-pais`}
+              name="pais"
+              defaultValue="Colombia"
+              aria-label="País"
+              className={cn(fieldCls, "w-[38%] shrink-0 px-3")}
+            >
+              {COUNTRIES.map((c) => (
+                <option key={c} value={c}>
+                  {c}
+                </option>
+              ))}
+            </select>
+            <input
+              id={`${id}-whatsapp`}
+              name="whatsapp"
+              type="tel"
+              inputMode="tel"
+              autoComplete="tel"
+              placeholder="+57 300 123 4567"
+              aria-invalid={!!errors.whatsapp}
+              aria-describedby={errors.whatsapp ? `${id}-whatsapp-error` : undefined}
+              className={fieldCls}
+            />
+          </div>
           {errors.whatsapp && (
             <p id={`${id}-whatsapp-error`} className="mt-1.5 text-sm text-destructive">
               {errors.whatsapp}
             </p>
           )}
         </div>
-
-        <div>
-          <label htmlFor={`${id}-pais`} className={labelCls}>
-            País (opcional)
-          </label>
-          <select id={`${id}-pais`} name="pais" defaultValue="" className={fieldCls}>
-            <option value="">Selecciona tu país</option>
-            {COUNTRIES.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
       </div>
 
       <button
         type="submit"
         disabled={status === "loading"}
-        className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-gold px-6 py-4 text-base font-bold tracking-wide text-gold-foreground transition-transform hover:scale-[1.015] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-70"
+        className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-gold px-6 py-4 text-sm font-bold tracking-[0.08em] text-gold-foreground uppercase transition-transform hover:scale-[1.015] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-70"
       >
         {status === "loading" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
-        Quiero mi lugar gratis
+        {status === "loading" ? "Enviando..." : "Quiero mi lugar en el encuentro →"}
       </button>
 
       {formError && <p className="mt-3 text-center text-sm text-destructive">{formError}</p>}
@@ -242,7 +218,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
           tone === "dark" ? "text-forest-foreground/70" : "text-muted-foreground",
         )}
       >
-        Cupos limitados · Clase 100% en vivo · Te enviamos el acceso por WhatsApp y email.
+        Tu información es privada. Solo la usamos para enviarte el acceso.
       </p>
     </form>
   );
