@@ -258,7 +258,7 @@ function Index() {
       {/* QUIÉN SOY */}
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto max-w-3xl px-5">
-          <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:gap-10 sm:text-left">
+          <div className="flex flex-col items-center gap-8 text-center lg:flex-row lg:items-start lg:gap-10 lg:text-left">
             <Reveal className="shrink-0">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
@@ -267,11 +267,11 @@ function Index() {
                 width={1008}
                 height={1312}
                 loading="lazy"
-                className="h-36 w-36 rounded-full border-2 border-gold/50 object-cover object-[center_22%] sm:h-44 sm:w-44"
+                className="h-40 w-40 rounded-full border-2 border-gold/50 object-cover object-[center_22%] lg:h-44 lg:w-44"
               />
             </Reveal>
-            <Reveal delay={120} className="flex flex-col items-center sm:items-start">
-              <h2 className="font-serif text-3xl font-black tracking-tight sm:text-4xl">
+            <Reveal delay={120} className="flex flex-col items-center lg:items-start">
+              <h2 className="font-serif text-3xl font-black tracking-tight lg:text-4xl">
                 Macarena Cárdenas
               </h2>
               <p className="mt-3 max-w-md text-xs font-semibold leading-relaxed tracking-[0.12em] text-gold uppercase">
@@ -292,11 +292,11 @@ function Index() {
                 es simple: la salud es soberanía. En Macasoul te acompaño a limpiar tu energía,
                 purificar tu cuerpo y prosperar en un cuerpo sano, libre y lleno de luz.
               </p>
-              <blockquote className="mt-8 max-w-lg border-l-2 border-gold pl-5 text-left font-serif text-xl leading-snug text-gold sm:text-2xl">
+              <blockquote className="mt-8 max-w-lg border-l-2 border-gold pl-5 text-left font-serif text-xl leading-snug text-gold lg:text-2xl">
                 "Donde no llega la medicina convencional, ahí empiezo yo: sanación desde la raíz y
                 el terreno biológico."
               </blockquote>
-              <ul className="mt-8 flex flex-wrap justify-center gap-2 sm:justify-start">
+              <ul className="mt-8 flex flex-wrap justify-center gap-2 lg:justify-start">
                 {credentials.map((c) => (
                   <li
                     key={c}
@@ -306,7 +306,7 @@ function Index() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10 flex justify-center sm:justify-start">
+              <div className="mt-10 flex justify-center lg:justify-start">
                 <GoldButton>Reservar mi lugar</GoldButton>
               </div>
             </Reveal>
