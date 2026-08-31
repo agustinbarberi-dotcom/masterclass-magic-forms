@@ -52,7 +52,7 @@ function ProgressBar({ value = 80 }: { value?: number }) {
 }
 
 function GraciasPage() {
-  const eventMeta = `${EVENT_DATE_LABEL.toUpperCase()}  ·  ${EVENT_TIME_LABEL}  ·  EVENTO ONLINE EXCLUSIVO`;
+  const eventMeta = `Evento exclusivo  ·  Domingo 4 de octubre  ·  Única vez en el año`;
 
   return (
     <div className="flex min-h-screen flex-col bg-blue-bg text-foreground">
