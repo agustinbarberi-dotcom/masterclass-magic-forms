@@ -22,8 +22,9 @@ export const EVENT_PLATFORM = "Online";
 export const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbyN1YjJZwBJyA2y6_HyItwp5_zlnnGkqIy7iZqm_ImR2EebRkMXdnBOO5FGTLZj-uQDBQ/exec";
 
-/** [LINK_GRUPO_WHATSAPP] grupo de calentamiento previo al evento */
-export const WHATSAPP_GROUP_URL = "[LINK_GRUPO_WHATSAPP]";
+/** Grupo de WhatsApp del evento. */
+export const WHATSAPP_GROUP_URL =
+  "https://chat.whatsapp.com/J4tuxHRyRFDBbL9PCjMdHN?mode=gi_t";
 
 /** [REPETICIÓN] respuesta del FAQ sobre la grabación */
 export const REPLAY_ANSWER =

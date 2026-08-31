@@ -46,6 +46,12 @@
   --color-forest: var(--forest);
   --color-forest-foreground: var(--forest-foreground);
   --color-cream: var(--cream);
+  --color-blue-accent: var(--blue-accent);
+  --color-blue-soft: var(--blue-soft);
+  --color-blue-text: var(--blue-text);
+  --color-blue-progress: var(--blue-progress);
+  --color-whatsapp: var(--whatsapp);
+  --color-whatsapp-foreground: var(--whatsapp-foreground);
   --font-serif: "Fraunces", ui-serif, Georgia, serif;
   --font-sans: "Instrument Sans", ui-sans-serif, system-ui, sans-serif;
   --shadow-soft: 0 18px 50px -24px oklch(0.32 0.05 60 / 0.28);
@@ -83,6 +89,13 @@
   --olive: oklch(0.55 0.055 120);
   --forest: oklch(0.3 0.05 148);
   --forest-foreground: oklch(0.973 0.014 85);
+
+  --blue-accent: oklch(0.66 0.1 240);
+  --blue-soft: oklch(0.94 0.03 240);
+  --blue-text: oklch(0.55 0.08 240);
+  --blue-progress: oklch(0.78 0.06 240);
+  --whatsapp: oklch(0.72 0.21 155);
+  --whatsapp-foreground: oklch(0.99 0.01 100);
 
   --gradient-warm: linear-gradient(
     160deg,
