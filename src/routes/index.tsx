@@ -144,10 +144,11 @@ function Index() {
               Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
             </h1>
             <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
-              Esta clase no es para todas. Es para la mujer que ya probó de todo, que sigue
-              inflamada, sin energía y sin respuestas —y que está lista, por fin, de sanar desde
-              la raíz. Un evento exclusivo. En vivo. Una sola vez al año. Conmigo.
+              Un encuentro para transformar años de probar de todo sin resultados en vitalidad,
+              claridad y bienestar sostenido para el resto de tu vida. Sin necesitar seguir buscando
+              la próxima solución.
             </p>
+
 
             <div className="mt-8 flex justify-center">
               <EventMeta />
