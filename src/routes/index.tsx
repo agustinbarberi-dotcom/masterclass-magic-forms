@@ -80,23 +80,38 @@ function GoldButton({
 
 function EventMeta({ className = "" }: { className?: string }) {
   return (
-    <div
-      className={`inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-sm font-semibold tracking-wide text-forest ${className}`}
-    >
-      <span className="inline-flex items-center gap-1.5">
-        <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
-        Domingo 4 de Octubre
-      </span>
-      <span className="text-gold/70" aria-hidden="true">·</span>
-      <span>{EVENT_TIME_LABEL}</span>
-      <span className="text-gold/70" aria-hidden="true">·</span>
-      <span>{EVENT_PLATFORM}</span>
-      <span className="text-gold/70" aria-hidden="true">·</span>
-      <span>Gratuito</span>
-      <span className="text-gold/70" aria-hidden="true">·</span>
-      <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
-        Cupos limitados
-      </span>
+    <div className={`text-sm font-semibold tracking-wide text-forest ${className}`}>
+      {/* Mobile: apilado y centrado, sin separadores */}
+      <div className="flex flex-col items-center gap-y-1 sm:hidden">
+        <span className="inline-flex items-center gap-1.5">
+          <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
+          Domingo 4 de Octubre
+        </span>
+        <span>{EVENT_TIME_LABEL}</span>
+        <span>{EVENT_PLATFORM}</span>
+        <span>Gratuito</span>
+        <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
+          Cupos limitados
+        </span>
+      </div>
+
+      {/* Desktop: en línea con separadores */}
+      <div className="hidden flex-wrap items-center justify-center gap-x-2 gap-y-1.5 sm:flex">
+        <span className="inline-flex items-center gap-1.5">
+          <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
+          Domingo 4 de Octubre
+        </span>
+        <span className="text-gold/70" aria-hidden="true">·</span>
+        <span>{EVENT_TIME_LABEL}</span>
+        <span className="text-gold/70" aria-hidden="true">·</span>
+        <span>{EVENT_PLATFORM}</span>
+        <span className="text-gold/70" aria-hidden="true">·</span>
+        <span>Gratuito</span>
+        <span className="text-gold/70" aria-hidden="true">·</span>
+        <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
+          Cupos limitados
+        </span>
+      </div>
     </div>
   );
 }
@@ -224,17 +239,17 @@ function Index() {
 
       {/* LA CLASE */}
       <section className="bg-secondary/50 py-24">
-        <div className="mx-auto max-w-2xl px-5">
+        <div className="mx-auto max-w-2xl px-5 text-center">
           <Reveal>
             <p className="eyebrow">La clase</p>
-            <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
+            <h2 className="mx-auto mt-4 max-w-xl text-3xl text-forest sm:text-4xl">
               Lo que te voy a contar en una hora juntas
             </h2>
           </Reveal>
-          <ol className="mt-12 space-y-8">
+          <ol className="mx-auto mt-12 max-w-xl space-y-8 text-left sm:text-center">
             {learnings.map((text, i) => (
               <Reveal as="li" key={text} delay={i * 80}>
-                <div className="flex gap-6">
+                <div className="flex items-start gap-5 sm:flex-col sm:items-center sm:gap-3">
                   <span className="font-serif text-2xl font-bold text-gold" aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -244,7 +259,7 @@ function Index() {
             ))}
           </ol>
           <Reveal delay={120}>
-            <p className="mt-12 text-base text-muted-foreground">
+            <p className="mx-auto mt-12 max-w-lg text-base text-muted-foreground">
               Sin humo. Sin recetas milagro. Solo lo que yo aprendí, validé en cientos de mujeres y
               hoy te comparto.
             </p>
@@ -258,7 +273,7 @@ function Index() {
       {/* QUIÉN SOY */}
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto max-w-3xl px-5">
-          <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left">
+          <div className="flex flex-col items-center gap-8 text-center lg:flex-row lg:items-start lg:gap-10 lg:text-left">
             <Reveal className="shrink-0">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
@@ -267,36 +282,36 @@ function Index() {
                 width={1008}
                 height={1312}
                 loading="lazy"
-                className="h-32 w-32 rounded-full border-2 border-gold/50 object-cover object-[center_22%] sm:h-40 sm:w-40"
+                className="h-40 w-40 rounded-full border-2 border-gold/50 object-cover object-[center_22%] lg:h-44 lg:w-44"
               />
             </Reveal>
-            <Reveal delay={120}>
-              <h2 className="font-serif text-3xl font-black tracking-tight sm:text-4xl">
+            <Reveal delay={120} className="flex flex-col items-center lg:items-start">
+              <h2 className="font-serif text-3xl font-black tracking-tight lg:text-4xl">
                 Macarena Cárdenas
               </h2>
-              <p className="mt-3 text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase">
+              <p className="mt-3 max-w-md text-xs font-semibold leading-relaxed tracking-[0.12em] text-gold uppercase">
                 Nutricionista Clínica · Dietoterapia China · Medicina Tradicional China ·
                 Digitopuntura · Desparasitación · Desintoxicación
               </p>
 
-              <p className="mt-6 text-base text-forest-foreground/85">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-forest-foreground/85">
                 Nací en Chile y crecí bajo el sol del Caribe. Fui Miss Teen Colombia, Modelo del
                 Año, presenté televisión y diseñé moda a nivel internacional. Pero mientras vestía
                 cuerpos ajenos, sentí un llamado más profundo: entender la arquitectura biológica y
                 espiritual del ser humano.
               </p>
-              <p className="mt-4 text-base text-forest-foreground/85">
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-forest-foreground/85">
                 Hoy ese llamado es mi misión. Me formé en nutrición clínica, trofología, salud
                 hormonal, microbiota, medicina integrativa, ayurveda, biodescodificación,
                 hipnoterapia, reprogramación de ADN y biohacks, entre España y Bali. Mi filosofía
                 es simple: la salud es soberanía. En Macasoul te acompaño a limpiar tu energía,
                 purificar tu cuerpo y prosperar en un cuerpo sano, libre y lleno de luz.
               </p>
-              <blockquote className="mt-8 border-l-2 border-gold pl-5 text-left font-serif text-xl leading-snug text-gold sm:text-2xl">
+              <blockquote className="mt-8 max-w-lg border-l-2 border-gold pl-5 text-left font-serif text-xl leading-snug text-gold lg:text-2xl">
                 "Donde no llega la medicina convencional, ahí empiezo yo: sanación desde la raíz y
                 el terreno biológico."
               </blockquote>
-              <ul className="mt-8 flex flex-wrap justify-center gap-2 sm:justify-start">
+              <ul className="mt-8 flex flex-wrap justify-center gap-2 lg:justify-start">
                 {credentials.map((c) => (
                   <li
                     key={c}
@@ -306,13 +321,12 @@ function Index() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10 flex justify-center">
+              <div className="mt-10 flex justify-center lg:justify-start">
                 <GoldButton>Reservar mi lugar</GoldButton>
               </div>
             </Reveal>
           </div>
         </div>
-
       </section>
 
 
