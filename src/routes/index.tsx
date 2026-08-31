@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
+
 import {
   EVENT_PLATFORM,
   EVENT_TIME_LABEL,
