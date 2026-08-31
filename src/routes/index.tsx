@@ -260,7 +260,7 @@ function Index() {
                 width={1008}
                 height={1312}
                 loading="lazy"
-                className="h-32 w-32 rounded-full border-2 border-gold/50 object-cover sm:h-40 sm:w-40"
+                className="h-32 w-32 rounded-full border-2 border-gold/50 object-cover object-[center_22%] sm:h-40 sm:w-40"
               />
             </Reveal>
             <Reveal delay={120}>
