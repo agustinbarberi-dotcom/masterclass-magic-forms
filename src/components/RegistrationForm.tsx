@@ -1,7 +1,13 @@
+import { useNavigate } from "@tanstack/react-router";
 import { useState } from "react";
 import { z } from "zod";
-import { Sparkles, MessageCircle, Loader2, AlertTriangle } from "lucide-react";
-import { COUNTRIES, WEBHOOK_URL, WHATSAPP_GROUP_URL } from "@/lib/event-config";
+import { Loader2, AlertTriangle } from "lucide-react";
+import {
+  COUNTRIES,
+  COUNTRY_CODES,
+  GOOGLE_SCRIPT_URL,
+  EVENT_DATE_LABEL,
+} from "@/lib/event-config";
 import { cn } from "@/lib/utils";
 
 const schema = z.object({
@@ -13,10 +19,10 @@ const schema = z.object({
   whatsapp: z
     .string()
     .trim()
-    .min(8, { message: "Tu número necesita más dígitos (mínimo 8, con código de país)." })
-    .max(25, { message: "El número es demasiado largo." })
-    .regex(/^\+?[0-9\s()-]{8,25}$/, {
-      message: "Usa solo números y el código de país (ej. +57 300 123 4567).",
+    .min(6, { message: "Tu número necesita más dígitos." })
+    .max(20, { message: "El número es demasiado largo." })
+    .regex(/^[0-9\s()-]{6,20}$/, {
+      message: "Usa solo números (sin código de país, lo agregamos automáticamente).",
     }),
   pais: z.string().trim().max(60).optional(),
 });
@@ -24,8 +30,9 @@ const schema = z.object({
 type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 
 export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "light" | "dark" }) {
+  const navigate = useNavigate();
   const [errors, setErrors] = useState<Errors>({});
-  const [status, setStatus] = useState<"idle" | "loading" | "success">("idle");
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formError, setFormError] = useState<string | null>(null);
 
   const labelCls = cn(
@@ -43,7 +50,9 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
   async function onSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setFormError(null);
-    const fd = new FormData(e.currentTarget);
+
+    const form = e.currentTarget;
+    const fd = new FormData(form);
     const parsed = schema.safeParse({
       nombre: String(fd.get("nombre") ?? ""),
       whatsapp: String(fd.get("whatsapp") ?? ""),
@@ -62,73 +71,37 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
 
     setErrors({});
     setStatus("loading");
+
+    const pais = parsed.data.pais || "Colombia";
+    const code = COUNTRY_CODES[pais] || "";
+    const rawNumber = parsed.data.whatsapp.replace(/[^0-9]/g, "");
+    const telefono = `${code}${rawNumber}`;
+
+    const payload = {
+      fecha: EVENT_DATE_LABEL,
+      nombre: parsed.data.nombre,
+      telefono,
+    };
+
     try {
-      if (WEBHOOK_URL.startsWith("http")) {
-        await fetch(WEBHOOK_URL, {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            ...parsed.data,
-            evento: "Clase magistral en vivo · Domingo 4 de octubre de 2026 · 11:30 AM Hora Colombia · Online",
-            origen: typeof window !== "undefined" ? window.location.href : "",
-          }),
-        });
-      }
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: "POST",
+        mode: "no-cors",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
+
+      form.reset();
       setStatus("success");
+
+      // breve feedback visual antes de redirigir a la página de gracias
+      setTimeout(() => {
+        navigate({ to: "/gracias" });
+      }, 1200);
     } catch {
-      setStatus("idle");
+      setStatus("error");
       setFormError("No pudimos enviar tu registro. Intenta de nuevo en unos segundos.");
     }
-  }
-
-  // PÁGINA DE GRACIAS — reemplaza toda la pantalla tras el registro
-  if (status === "success") {
-    return (
-      <div
-        id={id}
-        className="fixed inset-0 z-[100] flex items-center justify-center overflow-y-auto bg-background px-5 py-20"
-      >
-        <div className="mx-auto w-full max-w-xl text-center">
-          <Sparkles className="mx-auto h-9 w-9 text-gold" aria-hidden="true" />
-          <h1 className="mt-8 font-serif text-3xl font-black leading-[1.05] tracking-tight text-forest sm:text-[2.6rem]">
-            ¡Ya estás adentro. Solo falta un paso.
-          </h1>
-
-          <p className="mt-8 text-[0.72rem] font-semibold tracking-[0.2em] text-gold uppercase">
-            Tu registro: 80% completado
-          </p>
-          <div
-            className="mx-auto mt-3 h-1.5 w-full max-w-md overflow-hidden rounded-full bg-secondary"
-            role="progressbar"
-            aria-valuenow={80}
-            aria-valuemin={0}
-            aria-valuemax={100}
-          >
-            <div className="h-full w-[80%] rounded-full bg-gradient-gold" />
-          </div>
-
-          <p className="mx-auto mt-8 max-w-md text-base text-muted-foreground">
-            El acceso, los recordatorios y el material exclusivo llegan por WhatsApp. Únete al grupo
-            ahora para no perderte nada.
-          </p>
-
-          <a
-            href={WHATSAPP_GROUP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex w-full max-w-md items-center justify-center gap-2 rounded-full bg-forest px-7 py-4 text-sm font-bold tracking-wide text-forest-foreground shadow-soft transition-transform hover:scale-[1.02]"
-          >
-            <MessageCircle className="h-5 w-5" aria-hidden="true" />
-            Unirme al grupo de WhatsApp →
-          </a>
-
-          <p className="mt-5 flex items-center justify-center gap-2 text-xs text-muted-foreground">
-            <AlertTriangle className="h-3.5 w-3.5 text-gold" aria-hidden="true" />
-            Si no lo haces ahora, podrías quedarte sin el acceso y los materiales.
-          </p>
-        </div>
-      </div>
-    );
   }
 
   return (
@@ -187,7 +160,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
               type="tel"
               inputMode="tel"
               autoComplete="tel"
-              placeholder="+57 300 123 4567"
+              placeholder="300 123 4567"
               aria-invalid={!!errors.whatsapp}
               aria-describedby={errors.whatsapp ? `${id}-whatsapp-error` : undefined}
               className={fieldCls}
@@ -203,14 +176,24 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
 
       <button
         type="submit"
-        disabled={status === "loading"}
+        disabled={status === "loading" || status === "success"}
         className="mt-6 flex w-full items-center justify-center gap-2 rounded-full bg-gradient-gold px-6 py-4 text-sm font-bold tracking-[0.08em] text-gold-foreground uppercase transition-transform hover:scale-[1.015] focus-visible:ring-2 focus-visible:ring-gold focus-visible:ring-offset-2 disabled:opacity-70"
       >
         {status === "loading" && <Loader2 className="h-4 w-4 animate-spin" aria-hidden="true" />}
-        {status === "loading" ? "Enviando..." : "Quiero mi lugar en el encuentro →"}
+        {status === "success" && <span aria-hidden="true">✓</span>}
+        {status === "loading"
+          ? "Enviando..."
+          : status === "success"
+            ? "¡Registro enviado!"
+            : "Quiero mi lugar en el encuentro →"}
       </button>
 
-      {formError && <p className="mt-3 text-center text-sm text-destructive">{formError}</p>}
+      {formError && (
+        <p className="mt-3 flex items-center justify-center gap-1.5 text-center text-sm text-destructive">
+          <AlertTriangle className="h-4 w-4" aria-hidden="true" />
+          {formError}
+        </p>
+      )}
 
       <p
         className={cn(
