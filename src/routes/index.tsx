@@ -224,17 +224,17 @@ function Index() {
 
       {/* LA CLASE */}
       <section className="bg-secondary/50 py-24">
-        <div className="mx-auto max-w-2xl px-5">
+        <div className="mx-auto max-w-2xl px-5 text-center">
           <Reveal>
             <p className="eyebrow">La clase</p>
-            <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
+            <h2 className="mx-auto mt-4 max-w-xl text-3xl text-forest sm:text-4xl">
               Lo que te voy a contar en una hora juntas
             </h2>
           </Reveal>
-          <ol className="mt-12 space-y-8">
+          <ol className="mx-auto mt-12 max-w-xl space-y-8 text-left sm:text-center">
             {learnings.map((text, i) => (
               <Reveal as="li" key={text} delay={i * 80}>
-                <div className="flex gap-6">
+                <div className="flex items-start gap-5 sm:flex-col sm:items-center sm:gap-3">
                   <span className="font-serif text-2xl font-bold text-gold" aria-hidden="true">
                     {String(i + 1).padStart(2, "0")}
                   </span>
@@ -244,7 +244,7 @@ function Index() {
             ))}
           </ol>
           <Reveal delay={120}>
-            <p className="mt-12 text-base text-muted-foreground">
+            <p className="mx-auto mt-12 max-w-lg text-base text-muted-foreground">
               Sin humo. Sin recetas milagro. Solo lo que yo aprendí, validé en cientos de mujeres y
               hoy te comparto.
             </p>
