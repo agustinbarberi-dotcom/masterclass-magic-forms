@@ -42,9 +42,9 @@ function FourPointStar({ className }: { className?: string }) {
 
 function ProgressBar({ value = 80 }: { value?: number }) {
   return (
-    <div className="h-3 w-full overflow-hidden rounded-full bg-blue-soft">
+    <div className="h-3 w-full overflow-hidden rounded-full bg-gold-soft/60">
       <div
-        className="h-full rounded-full bg-blue-progress transition-all duration-1000 ease-out"
+        className="h-full rounded-full bg-gradient-gold transition-all duration-1000 ease-out"
         style={{ width: `${value}%` }}
       />
     </div>
@@ -55,11 +55,11 @@ function GraciasPage() {
   const eventMeta = `Evento exclusivo  ·  Domingo 4 de octubre  ·  Única vez en el año`;
 
   return (
-    <div className="flex min-h-screen flex-col bg-blue-bg text-foreground">
+    <div className="flex min-h-screen flex-col bg-gradient-warm text-foreground">
       {/* Header */}
-      <header className="w-full border-b border-blue-soft/60 bg-white/70 px-4 py-4 backdrop-blur-sm">
+      <header className="w-full border-b border-gold-soft/60 bg-cream/80 px-4 py-4 backdrop-blur-sm">
         <div className="mx-auto flex max-w-xl items-center justify-center">
-          <p className="text-center text-xs font-semibold tracking-[0.16em] text-blue-accent">
+          <p className="text-center text-xs font-semibold tracking-[0.16em] text-gold">
             {eventMeta}
           </p>
         </div>
@@ -68,13 +68,13 @@ function GraciasPage() {
       {/* Main */}
       <main className="flex flex-1 flex-col items-center justify-center px-5 py-12 text-center sm:py-16">
         <div className="mx-auto w-full max-w-md">
-          <FourPointStar className="mx-auto h-12 w-9 text-blue-accent" />
+          <FourPointStar className="mx-auto h-12 w-9 text-gold" />
 
-          <h1 className="mt-7 font-serif text-[2.35rem] font-black leading-[1.05] tracking-tight text-foreground sm:text-[2.85rem]">
+          <h1 className="mt-7 font-serif text-[2.35rem] font-black leading-[1.05] tracking-tight text-forest sm:text-[2.85rem]">
             ¡Ya estás adentro. Solo falta un paso.
           </h1>
 
-          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-blue-text">
+          <p className="mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-olive">
             Tu registro: 80% completado
           </p>
 
@@ -98,7 +98,7 @@ function GraciasPage() {
             <span aria-hidden="true">→</span>
           </a>
 
-          <p className="mt-4 flex items-center justify-center gap-2 text-xs text-blue-text/80">
+          <p className="mt-4 flex items-center justify-center gap-2 text-xs text-olive/80">
             <span aria-hidden="true">⚠️</span>
             Si no lo hacés ahora, podrías quedarte sin el acceso y los
             materiales.
