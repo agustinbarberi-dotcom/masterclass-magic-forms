@@ -111,6 +111,15 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
         body: JSON.stringify(payload),
       });
 
+      try {
+        localStorage.setItem(
+          "macasoul_lead",
+          JSON.stringify({ nombre: parsed.data.nombre, whatsapp: parsed.data.whatsapp, pais }),
+        );
+      } catch {
+        /* ignorar */
+      }
+
       form.reset();
       setStatus("success");
 
@@ -141,6 +150,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
           </label>
           <input
             id={`${id}-nombre`}
+            ref={nombreRef}
             name="nombre"
             type="text"
             autoComplete="name"
@@ -191,6 +201,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
             </div>
             <input
               id={`${id}-whatsapp`}
+              ref={whatsappRef}
               name="whatsapp"
               type="tel"
               inputMode="tel"
