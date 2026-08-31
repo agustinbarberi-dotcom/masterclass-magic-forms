@@ -11,7 +11,7 @@ import {
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.jpg";
 import macaPortraitAsset from "@/assets/maca-portrait.jpg.asset.json";
-import { Quote } from "lucide-react";
+import { Quote, Calendar } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -79,6 +79,29 @@ function GoldButton({
   );
 }
 
+function EventMeta({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-sm font-semibold tracking-wide text-forest ${className}`}
+    >
+      <span className="inline-flex items-center gap-1.5">
+        <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
+        Domingo 4 de Octubre
+      </span>
+      <span className="text-gold/70" aria-hidden="true">·</span>
+      <span>{EVENT_TIME_LABEL}</span>
+      <span className="text-gold/70" aria-hidden="true">·</span>
+      <span>{EVENT_PLATFORM}</span>
+      <span className="text-gold/70" aria-hidden="true">·</span>
+      <span>Gratuito</span>
+      <span className="text-gold/70" aria-hidden="true">·</span>
+      <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
+        Cupos limitados
+      </span>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
@@ -128,10 +151,9 @@ function Index() {
               la raíz. Un evento exclusivo. En vivo. Una sola vez al año. Conmigo.
             </p>
 
-            <p className="mt-8 text-sm tracking-wide text-forest">
-              Domingo 4 de octubre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
-              {EVENT_PLATFORM}
-            </p>
+            <div className="mt-8 flex justify-center">
+              <EventMeta />
+            </div>
 
             <div className="mt-8 flex justify-center">
               <Countdown />
@@ -157,10 +179,9 @@ function Index() {
             <h2 className="font-serif text-3xl font-black tracking-tight text-forest sm:text-4xl">
               Reserva tu lugar
             </h2>
-            <p className="mt-5 text-sm font-medium tracking-wide text-forest">
-              Domingo 4 de octubre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
-              {EVENT_PLATFORM} · Sin costo · Evento exclusivo · Única vez en el año
-            </p>
+            <div className="mt-5 flex justify-center">
+              <EventMeta />
+            </div>
           </Reveal>
 
           <Reveal delay={120} className="mt-9 text-left">
