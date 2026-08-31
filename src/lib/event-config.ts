@@ -7,13 +7,13 @@
 export const EVENT_DATE_ISO = "2026-10-04T19:00:00-05:00";
 
 /** [HORA] tal como se muestra en la página */
-export const EVENT_TIME_LABEL = "[HORA]";
+export const EVENT_TIME_LABEL = "11:30 AM";
 
 /** [ZONA HORARIA] tal como se muestra en la página */
-export const EVENT_TIMEZONE_LABEL = "[ZONA HORARIA]";
+export const EVENT_TIMEZONE_LABEL = "Hora Colombia";
 
 /** [PLATAFORMA] donde se transmite en vivo (Zoom, YouTube en vivo, etc.) */
-export const EVENT_PLATFORM = "[PLATAFORMA]";
+export const EVENT_PLATFORM = "Online";
 
 /** [WEBHOOK_URL] endpoint del CRM / ManyChat / email marketing */
 export const WEBHOOK_URL = "[WEBHOOK_URL]";

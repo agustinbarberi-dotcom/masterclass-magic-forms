@@ -69,7 +69,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({
             ...parsed.data,
-            evento: "Clase magistral en vivo · Domingo 4 de octubre de 2026",
+            evento: "Clase magistral en vivo · Domingo 4 de octubre de 2026 · 11:30 AM Hora Colombia · Online",
             origen: typeof window !== "undefined" ? window.location.href : "",
           }),
         });

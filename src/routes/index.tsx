@@ -11,7 +11,7 @@ import {
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.jpg";
 import macaPortraitAsset from "@/assets/maca-portrait.jpg.asset.json";
-import { Quote } from "lucide-react";
+import { Quote, Calendar } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
