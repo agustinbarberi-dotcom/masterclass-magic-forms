@@ -253,8 +253,8 @@ function Index() {
       {/* QUIÉN SOY */}
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto max-w-3xl px-5">
-          <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:gap-10 sm:text-left">
-            <Reveal className="shrink-0">
+          <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left">
+            <Reveal className="shrink-0 sm:mt-6">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
                 src={macaPortraitAsset.url}
@@ -273,18 +273,17 @@ function Index() {
                 Colombiana · Nutrición clínica · Salud hormonal · Medicina integrativa
               </p>
               <p className="mt-6 text-base text-forest-foreground/85">
-                Nací en Chile y crecí bajo el sol del Caribe. Soy hija de Sonia Bravo (Miss Chile
-                1969), fui Miss Teen Colombia y Modelo del Año, presenté televisión y diseñé moda
-                con éxito internacional. Pero mientras vestía cuerpos ajenos, sentí un llamado más
-                profundo: entender la arquitectura biológica y espiritual del ser humano.
+                Nací en Chile y crecí bajo el sol del Caribe. Fui Miss Teen Colombia, Modelo del
+                Año, presenté televisión y diseñé moda a nivel internacional. Pero mientras vestía
+                cuerpos ajenos, sentí un llamado más profundo: entender la arquitectura biológica y
+                espiritual del ser humano.
               </p>
               <p className="mt-4 text-base text-forest-foreground/85">
                 Hoy ese llamado es mi misión. Me formé en nutrición clínica, trofología, salud
-                hormonal, menopausia, microbiota, dietoterapia, digitopuntura china,
-                biodescodificación, bioneuroemoción, medicina integrativa, ayurveda, hipnoterapia,
-                reprogramación de ADN y biohacks, entre España y Bali. Mi filosofía es simple: la
-                salud es soberanía. En Macasoul te acompaño a limpiar tu energía, purificar tu
-                cuerpo y prosperar en un cuerpo sano, libre y lleno de luz.
+                hormonal, microbiota, medicina integrativa, ayurveda, biodescodificación,
+                hipnoterapia, reprogramación de ADN y biohacks, entre España y Bali. Mi filosofía
+                es simple: la salud es soberanía. En Macasoul te acompaño a limpiar tu energía,
+                purificar tu cuerpo y prosperar en un cuerpo sano, libre y lleno de luz.
               </p>
               <blockquote className="mt-8 border-l-2 border-gold pl-5 text-left font-serif text-xl leading-snug text-gold sm:text-2xl">
                 "Donde no llega la medicina convencional, ahí empiezo yo: sanación desde la raíz y
@@ -304,6 +303,7 @@ function Index() {
           </div>
         </div>
       </section>
+
 
 
       {/* FOOTER */}
