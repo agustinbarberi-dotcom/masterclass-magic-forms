@@ -155,7 +155,7 @@ function Index() {
             </div>
 
             <div className="mt-10">
-              <GoldButton className="animate-float">Reservar mi lugar</GoldButton>
+              <GoldButton className="animate-float px-8 py-4 text-base">Reservar mi lugar</GoldButton>
             </div>
 
           </Reveal>
