@@ -1,5 +1,5 @@
 import { useNavigate } from "@tanstack/react-router";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { Loader2, AlertTriangle } from "lucide-react";
 import {
@@ -36,6 +36,24 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formError, setFormError] = useState<string | null>(null);
   const [pais, setPais] = useState("Colombia");
+  const nombreRef = useRef<HTMLInputElement>(null);
+  const whatsappRef = useRef<HTMLInputElement>(null);
+
+  // Relleno automático: recupera los datos guardados del navegador
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("macasoul_lead");
+      if (!saved) return;
+      const data = JSON.parse(saved) as { nombre?: string; whatsapp?: string; pais?: string };
+      if (data.nombre && nombreRef.current && !nombreRef.current.value)
+        nombreRef.current.value = data.nombre;
+      if (data.whatsapp && whatsappRef.current && !whatsappRef.current.value)
+        whatsappRef.current.value = data.whatsapp;
+      if (data.pais) setPais(data.pais);
+    } catch {
+      /* ignorar */
+    }
+  }, []);
 
   const labelCls = cn(
     "mb-1.5 block text-[0.72rem] tracking-[0.16em] uppercase",
@@ -93,6 +111,15 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
         body: JSON.stringify(payload),
       });
 
+      try {
+        localStorage.setItem(
+          "macasoul_lead",
+          JSON.stringify({ nombre: parsed.data.nombre, whatsapp: parsed.data.whatsapp, pais }),
+        );
+      } catch {
+        /* ignorar */
+      }
+
       form.reset();
       setStatus("success");
 
@@ -123,6 +150,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
           </label>
           <input
             id={`${id}-nombre`}
+            ref={nombreRef}
             name="nombre"
             type="text"
             autoComplete="name"
@@ -173,6 +201,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
             </div>
             <input
               id={`${id}-whatsapp`}
+              ref={whatsappRef}
               name="whatsapp"
               type="tel"
               inputMode="tel"
