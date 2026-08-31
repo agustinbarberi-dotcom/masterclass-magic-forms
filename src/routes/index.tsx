@@ -154,10 +154,6 @@ function Index() {
               <EventMeta />
             </div>
 
-            <div className="mt-8 flex justify-center">
-              <Countdown />
-            </div>
-
             <div className="mt-10">
               <a
                 href="#registro"
@@ -166,6 +162,7 @@ function Index() {
                 Reservar mi lugar
               </a>
             </div>
+
           </Reveal>
         </div>
       </section>
