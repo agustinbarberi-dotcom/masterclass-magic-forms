@@ -80,23 +80,38 @@ function GoldButton({
 
 function EventMeta({ className = "" }: { className?: string }) {
   return (
-    <div
-      className={`flex flex-col items-center justify-center gap-y-1.5 text-sm font-semibold tracking-wide text-forest sm:flex-row sm:flex-wrap sm:gap-x-2 ${className}`}
-    >
-      <span className="inline-flex items-center gap-1.5">
-        <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
-        Domingo 4 de Octubre
-      </span>
-      <span className="hidden text-gold/70 sm:inline" aria-hidden="true">·</span>
-      <span>{EVENT_TIME_LABEL}</span>
-      <span className="hidden text-gold/70 sm:inline" aria-hidden="true">·</span>
-      <span>{EVENT_PLATFORM}</span>
-      <span className="hidden text-gold/70 sm:inline" aria-hidden="true">·</span>
-      <span>Gratuito</span>
-      <span className="hidden text-gold/70 sm:inline" aria-hidden="true">·</span>
-      <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
-        Cupos limitados
-      </span>
+    <div className={`text-sm font-semibold tracking-wide text-forest ${className}`}>
+      {/* Mobile: apilado y centrado, sin separadores */}
+      <div className="flex flex-col items-center gap-y-1 sm:hidden">
+        <span className="inline-flex items-center gap-1.5">
+          <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
+          Domingo 4 de Octubre
+        </span>
+        <span>{EVENT_TIME_LABEL}</span>
+        <span>{EVENT_PLATFORM}</span>
+        <span>Gratuito</span>
+        <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
+          Cupos limitados
+        </span>
+      </div>
+
+      {/* Desktop: en línea con separadores */}
+      <div className="hidden flex-wrap items-center justify-center gap-x-2 gap-y-1.5 sm:flex">
+        <span className="inline-flex items-center gap-1.5">
+          <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
+          Domingo 4 de Octubre
+        </span>
+        <span className="text-gold/70" aria-hidden="true">·</span>
+        <span>{EVENT_TIME_LABEL}</span>
+        <span className="text-gold/70" aria-hidden="true">·</span>
+        <span>{EVENT_PLATFORM}</span>
+        <span className="text-gold/70" aria-hidden="true">·</span>
+        <span>Gratuito</span>
+        <span className="text-gold/70" aria-hidden="true">·</span>
+        <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
+          Cupos limitados
+        </span>
+      </div>
     </div>
   );
 }
