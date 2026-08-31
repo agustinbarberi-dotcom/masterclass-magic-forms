@@ -87,16 +87,18 @@ function GraciasPage() {
             llegan por WhatsApp. Unite al grupo ahora para no perderte nada.
           </p>
 
-          <a
-            href={WHATSAPP_GROUP_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="mt-8 inline-flex w-full items-center justify-center gap-2 rounded-xl bg-whatsapp px-6 py-4 text-sm font-bold uppercase tracking-wider text-whatsapp-foreground shadow-lg shadow-whatsapp/25 transition-transform hover:scale-[1.02] active:scale-[0.98]"
-          >
-            <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
-            Unirme al grupo de WhatsApp
-            <span aria-hidden="true">→</span>
-          </a>
+          <div className="animate-float">
+            <a
+              href={WHATSAPP_GROUP_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex w-full items-center justify-center gap-2 rounded-xl bg-whatsapp px-6 py-4 text-sm font-bold uppercase tracking-wider text-whatsapp-foreground shadow-lg shadow-whatsapp/25 transition-transform hover:scale-[1.02] active:scale-[0.98]"
+            >
+              <WhatsAppIcon className="h-5 w-5" aria-hidden="true" />
+              Unirme al grupo de WhatsApp
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
 
           <p className="mt-4 flex items-center justify-center gap-2 text-xs text-olive/80">
             <span aria-hidden="true">⚠️</span>
