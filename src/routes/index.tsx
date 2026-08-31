@@ -258,7 +258,7 @@ function Index() {
       {/* QUIÉN SOY */}
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto max-w-3xl px-5">
-          <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left">
+          <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-start sm:gap-10 sm:text-left">
             <Reveal className="shrink-0">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
@@ -267,32 +267,32 @@ function Index() {
                 width={1008}
                 height={1312}
                 loading="lazy"
-                className="h-32 w-32 rounded-full border-2 border-gold/50 object-cover object-[center_22%] sm:h-40 sm:w-40"
+                className="h-36 w-36 rounded-full border-2 border-gold/50 object-cover object-[center_22%] sm:h-44 sm:w-44"
               />
             </Reveal>
-            <Reveal delay={120}>
+            <Reveal delay={120} className="flex flex-col items-center sm:items-start">
               <h2 className="font-serif text-3xl font-black tracking-tight sm:text-4xl">
                 Macarena Cárdenas
               </h2>
-              <p className="mt-3 text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase">
+              <p className="mt-3 max-w-md text-xs font-semibold leading-relaxed tracking-[0.12em] text-gold uppercase">
                 Nutricionista Clínica · Dietoterapia China · Medicina Tradicional China ·
                 Digitopuntura · Desparasitación · Desintoxicación
               </p>
 
-              <p className="mt-6 text-base text-forest-foreground/85">
+              <p className="mt-6 max-w-xl text-base leading-relaxed text-forest-foreground/85">
                 Nací en Chile y crecí bajo el sol del Caribe. Fui Miss Teen Colombia, Modelo del
                 Año, presenté televisión y diseñé moda a nivel internacional. Pero mientras vestía
                 cuerpos ajenos, sentí un llamado más profundo: entender la arquitectura biológica y
                 espiritual del ser humano.
               </p>
-              <p className="mt-4 text-base text-forest-foreground/85">
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-forest-foreground/85">
                 Hoy ese llamado es mi misión. Me formé en nutrición clínica, trofología, salud
                 hormonal, microbiota, medicina integrativa, ayurveda, biodescodificación,
                 hipnoterapia, reprogramación de ADN y biohacks, entre España y Bali. Mi filosofía
                 es simple: la salud es soberanía. En Macasoul te acompaño a limpiar tu energía,
                 purificar tu cuerpo y prosperar en un cuerpo sano, libre y lleno de luz.
               </p>
-              <blockquote className="mt-8 border-l-2 border-gold pl-5 text-left font-serif text-xl leading-snug text-gold sm:text-2xl">
+              <blockquote className="mt-8 max-w-lg border-l-2 border-gold pl-5 text-left font-serif text-xl leading-snug text-gold sm:text-2xl">
                 "Donde no llega la medicina convencional, ahí empiezo yo: sanación desde la raíz y
                 el terreno biológico."
               </blockquote>
@@ -306,13 +306,12 @@ function Index() {
                   </li>
                 ))}
               </ul>
-              <div className="mt-10 flex justify-center">
+              <div className="mt-10 flex justify-center sm:justify-start">
                 <GoldButton>Reservar mi lugar</GoldButton>
               </div>
             </Reveal>
           </div>
         </div>
-
       </section>
 
 
