@@ -155,12 +155,7 @@ function Index() {
             </div>
 
             <div className="mt-10">
-              <a
-                href="#registro"
-                className="inline-flex rounded-full bg-forest px-8 py-3.5 text-sm font-semibold tracking-wide text-forest-foreground shadow-soft transition-colors hover:bg-forest/90"
-              >
-                Reservar mi lugar
-              </a>
+              <GoldButton className="animate-float">Reservar mi lugar</GoldButton>
             </div>
 
           </Reveal>
