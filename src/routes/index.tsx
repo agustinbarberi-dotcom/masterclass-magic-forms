@@ -10,7 +10,7 @@ import {
   TESTIMONIALS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.jpg";
-import macaPortrait from "@/assets/maca-portrait.jpg";
+import macaPortraitAsset from "@/assets/maca-portrait.jpg.asset.json";
 import { Quote } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -238,8 +238,8 @@ function Index() {
             <Reveal className="shrink-0">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
-                src={macaPortrait}
-                alt="[FOTO DE MACA] Retrato de Macarena Cárdenas"
+                src={macaPortraitAsset.url}
+                alt="Retrato de Macarena Cárdenas"
                 width={1008}
                 height={1312}
                 loading="lazy"
@@ -324,12 +324,12 @@ function Index() {
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <p className="eyebrow text-gold">Evento único y exclusivo</p>
+            <p className="eyebrow text-gold">Evento exclusivo · Única vez en el año</p>
             <h2 className="mt-4 text-3xl sm:text-[2.6rem]">
-              Puedes seguir igual. O puedes reservar tu lugar conmigo antes de que se acaben.
+              Puedes seguir igual. O puedes reservar tu lugar en este evento exclusivo antes de que se acaben.
             </h2>
             <p className="mt-6 text-base text-forest-foreground/80">
-              Es gratis. Es en vivo. Es con cupos limitados —y cuando se cierren, se cierran.
+              Es gratis. Es en vivo. Es una sola vez al año —y cuando se cierren los cupos, se cierran.
             </p>
             <div className="mt-10">
               <Countdown />
