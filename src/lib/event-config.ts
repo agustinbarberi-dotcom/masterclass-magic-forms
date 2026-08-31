@@ -57,24 +57,4 @@ export const COUNTRIES = [
   "Otro país",
 ];
 
-/** Testimonios — reemplazar por testimonios reales. No inventar. */
-export const TESTIMONIALS = [
-  {
-    placeholder: "[TESTIMONIO 1]",
-    name: "[NOMBRE]",
-    country: "[PAÍS]",
-    text: "[Texto del testimonio real aquí]",
-  },
-  {
-    placeholder: "[TESTIMONIO 2]",
-    name: "[NOMBRE]",
-    country: "[PAÍS]",
-    text: "[Texto del testimonio real aquí]",
-  },
-  {
-    placeholder: "[TESTIMONIO 3]",
-    name: "[NOMBRE]",
-    country: "[PAÍS]",
-    text: "[Texto del testimonio real aquí]",
-  },
-];
+
