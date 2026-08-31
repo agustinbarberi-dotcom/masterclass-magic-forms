@@ -251,8 +251,8 @@ function Index() {
               hoy te comparto.
             </p>
           </Reveal>
-          <Reveal delay={160} className="mt-10">
-            <GoldButton>Quiero mi lugar gratis</GoldButton>
+          <Reveal delay={160} className="mt-10 flex justify-center">
+            <GoldButton>Quiero mi lugar</GoldButton>
           </Reveal>
         </div>
       </section>
