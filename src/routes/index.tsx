@@ -255,7 +255,7 @@ function Index() {
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto max-w-3xl px-5">
           <div className="flex flex-col items-center gap-8 text-center sm:flex-row sm:items-center sm:gap-10 sm:text-left">
-            <Reveal className="shrink-0 sm:mt-6">
+            <Reveal className="shrink-0">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
                 src={macaPortraitAsset.url}
@@ -271,8 +271,9 @@ function Index() {
                 Macarena Cárdenas
               </h2>
               <p className="mt-3 text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase">
-                Colombiana · Nutrición clínica · Salud hormonal · Medicina integrativa
+                Nutrición clínica · Salud hormonal · Medicina integrativa
               </p>
+
               <p className="mt-6 text-base text-forest-foreground/85">
                 Nací en Chile y crecí bajo el sol del Caribe. Fui Miss Teen Colombia, Modelo del
                 Año, presenté televisión y diseñé moda a nivel internacional. Pero mientras vestía
