@@ -151,10 +151,9 @@ function Index() {
               la raíz. Un evento exclusivo. En vivo. Una sola vez al año. Conmigo.
             </p>
 
-            <p className="mt-8 text-sm tracking-wide text-forest">
-              Domingo 4 de octubre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
-              {EVENT_PLATFORM}
-            </p>
+            <div className="mt-8 flex justify-center">
+              <EventMeta />
+            </div>
 
             <div className="mt-8 flex justify-center">
               <Countdown />
