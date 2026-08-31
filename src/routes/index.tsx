@@ -3,15 +3,11 @@ import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import {
-  EVENT_PLATFORM,
-  EVENT_TIME_LABEL,
-  EVENT_TIMEZONE_LABEL,
   SOCIAL_LINKS,
-  TESTIMONIALS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.jpg";
 import macaPortraitAsset from "@/assets/maca-portrait.jpg.asset.json";
-import { Quote, Calendar } from "lucide-react";
+import { Calendar } from "lucide-react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
