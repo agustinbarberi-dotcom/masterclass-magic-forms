@@ -7,7 +7,7 @@ import {
   EVENT_TIME_LABEL,
   SOCIAL_LINKS,
 } from "@/lib/event-config";
-import heroRoots from "@/assets/hero-roots.jpg";
+import heroRoots from "@/assets/hero-roots.webp";
 import macaPortraitAsset from "@/assets/maca-portrait.jpg.asset.json";
 import { Calendar } from "lucide-react";
 
