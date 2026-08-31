@@ -130,8 +130,10 @@ function Index() {
         <img
           src={heroRoots}
           alt="Raíces de un árbol iluminadas por luz dorada en un bosque"
-          width={1600}
-          height={1200}
+          width={1200}
+          height={900}
+          decoding="async"
+          fetchPriority="high"
           className="absolute inset-0 h-full w-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-warm opacity-90" aria-hidden="true" />
