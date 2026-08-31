@@ -179,10 +179,9 @@ function Index() {
             <h2 className="font-serif text-3xl font-black tracking-tight text-forest sm:text-4xl">
               Reserva tu lugar
             </h2>
-            <p className="mt-5 text-sm font-medium tracking-wide text-forest">
-              Domingo 4 de octubre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
-              {EVENT_PLATFORM} · Sin costo · Evento exclusivo · Única vez en el año
-            </p>
+            <div className="mt-5 flex justify-center">
+              <EventMeta />
+            </div>
           </Reveal>
 
           <Reveal delay={120} className="mt-9 text-left">
