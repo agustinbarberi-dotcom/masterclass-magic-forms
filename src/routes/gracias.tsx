@@ -83,8 +83,8 @@ function GraciasPage() {
           </div>
 
           <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-muted-foreground">
-            El acceso, los recordatorios y el material exclusivo llegan por
-            WhatsApp. Unite al grupo ahora para no perderte nada.
+            El acceso, los recordatorios y el material exclusivo de Macarena
+            llegan por WhatsApp. Unite al grupo ahora para no perderte nada.
           </p>
 
           <a
