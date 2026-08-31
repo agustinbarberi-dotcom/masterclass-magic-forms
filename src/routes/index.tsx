@@ -53,11 +53,12 @@ const learnings = [
 ];
 
 const credentials = [
-  "Nutrición Clínica",
-  "Salud Hormonal y Menopausia",
-  "Medicina Integrativa",
-  "Biodescodificación",
-  "Ayurveda",
+  "Nutricionista Clínica",
+  "Experta en Dietoterapia China",
+  "Medicina Tradicional China",
+  "Digitopuntura para puntos específicos de dolor y sanación",
+  "Desparasitación",
+  "Desintoxicación nueva escuela",
 ];
 
 function GoldButton({
@@ -274,7 +275,8 @@ function Index() {
                 Macarena Cárdenas
               </h2>
               <p className="mt-3 text-[0.68rem] font-semibold tracking-[0.2em] text-gold uppercase">
-                Nutrición clínica · Salud hormonal · Medicina integrativa
+                Nutricionista Clínica · Dietoterapia China · Medicina Tradicional China ·
+                Digitopuntura · Desparasitación · Desintoxicación
               </p>
 
               <p className="mt-6 text-base text-forest-foreground/85">
