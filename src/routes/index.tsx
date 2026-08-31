@@ -3,6 +3,8 @@ import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import {
+  EVENT_PLATFORM,
+  EVENT_TIME_LABEL,
   SOCIAL_LINKS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.jpg";
@@ -304,60 +306,6 @@ function Index() {
       </section>
 
 
-      {/* PRUEBA SOCIAL */}
-      <section className="py-24">
-        <div className="mx-auto max-w-5xl px-5">
-          <Reveal>
-            <p className="eyebrow">Testimonios</p>
-            <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Ellas también confiaron en mi voz
-            </h2>
-          </Reveal>
-          {/* NOTA DEV: estructura lista para reemplazar por testimonios reales */}
-          <div className="mt-12 grid gap-10 md:grid-cols-3">
-            {TESTIMONIALS.map((t, i) => (
-              <Reveal as="article" key={t.placeholder} delay={i * 90}>
-                <figure>
-                  <Quote className="h-6 w-6 text-gold" aria-hidden="true" />
-                  <blockquote className="mt-4 font-serif text-xl leading-snug text-forest">
-                    {t.text}
-                  </blockquote>
-                  <figcaption className="mt-6 text-sm text-muted-foreground">
-                    <span className="block font-semibold text-foreground">{t.name}</span>
-                    {t.country}
-                    <span className="mt-2 block text-[0.68rem] tracking-[0.18em] text-gold uppercase">
-                      {t.placeholder}
-                    </span>
-                  </figcaption>
-                </figure>
-              </Reveal>
-            ))}
-          </div>
-        </div>
-      </section>
-
-
-      {/* CTA FINAL */}
-      <section className="bg-forest py-24 text-forest-foreground">
-        <div className="mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
-          <Reveal>
-            <p className="eyebrow text-gold">Evento exclusivo · Única vez en el año</p>
-            <h2 className="mt-4 text-3xl sm:text-[2.6rem]">
-              Puedes seguir igual. O puedes reservar tu lugar en este evento exclusivo antes de que se acaben.
-            </h2>
-            <p className="mt-6 text-base text-forest-foreground/80">
-              Es gratis. Es en vivo. Es una sola vez al año —y cuando se cierren los cupos, se cierran.
-            </p>
-            <div className="mt-10">
-              <Countdown />
-            </div>
-          </Reveal>
-          <Reveal delay={120}>
-            <RegistrationForm id="registro-final" tone="dark" />
-          </Reveal>
-        </div>
-      </section>
-
       {/* FOOTER */}
       <footer className="border-t border-border/60 py-12">
         <div className="mx-auto max-w-4xl px-5 text-center">
@@ -377,12 +325,6 @@ function Index() {
           </p>
         </div>
       </footer>
-
-      {/* CTA STICKY MOBILE */}
-      <div className="fixed inset-x-0 bottom-0 z-50 border-t border-gold-soft/60 bg-background/95 px-4 py-3 backdrop-blur-md md:hidden">
-        <GoldButton className="w-full py-4 text-base">Quiero mi lugar gratis</GoldButton>
-      </div>
-      <div className="h-20 md:hidden" aria-hidden="true" />
     </div>
   );
 }
