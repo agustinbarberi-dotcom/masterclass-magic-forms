@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
+
 import {
   EVENT_PLATFORM,
   EVENT_TIME_LABEL,
@@ -154,10 +154,6 @@ function Index() {
               <EventMeta />
             </div>
 
-            <div className="mt-8 flex justify-center">
-              <Countdown />
-            </div>
-
             <div className="mt-10">
               <a
                 href="#registro"
@@ -166,6 +162,7 @@ function Index() {
                 Reservar mi lugar
               </a>
             </div>
+
           </Reveal>
         </div>
       </section>
