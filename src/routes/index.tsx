@@ -117,7 +117,7 @@ function Index() {
         <div className="relative mx-auto max-w-5xl px-5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">
-              Evento único y exclusivo · 20 de septiembre · Cupos limitados
+              Evento exclusivo · Domingo 4 de octubre · Única vez en el año · Cupos limitados
             </p>
             <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
@@ -125,11 +125,11 @@ function Index() {
             <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
               Esta clase no es para todas. Es para la mujer que ya probó de todo, que sigue
               inflamada, sin energía y sin respuestas —y que está lista, por fin, de sanar desde
-              la raíz. Evento único y exclusivo. En vivo. Conmigo.
+              la raíz. Un evento exclusivo. En vivo. Una sola vez al año. Conmigo.
             </p>
 
             <p className="mt-8 text-sm tracking-wide text-forest">
-              20 de septiembre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
+              Domingo 4 de octubre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
               {EVENT_PLATFORM}
             </p>
 
@@ -158,8 +158,8 @@ function Index() {
               Reserva tu lugar
             </h2>
             <p className="mt-5 text-sm font-medium tracking-wide text-forest">
-              20 de septiembre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
-              {EVENT_PLATFORM} · Sin costo · Cupos limitados
+              Domingo 4 de octubre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
+              {EVENT_PLATFORM} · Sin costo · Evento exclusivo · Única vez en el año
             </p>
           </Reveal>
 
