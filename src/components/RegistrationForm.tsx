@@ -5,6 +5,7 @@ import { Loader2, AlertTriangle } from "lucide-react";
 import {
   COUNTRIES,
   COUNTRY_CODES,
+  COUNTRY_FLAGS,
   GOOGLE_SCRIPT_URL,
   EVENT_DATE_LABEL,
 } from "@/lib/event-config";
@@ -34,6 +35,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formError, setFormError] = useState<string | null>(null);
+  const [pais, setPais] = useState("Colombia");
 
   const labelCls = cn(
     "mb-1.5 block text-[0.72rem] tracking-[0.16em] uppercase",
