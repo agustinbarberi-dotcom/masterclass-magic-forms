@@ -79,6 +79,29 @@ function GoldButton({
   );
 }
 
+function EventMeta({ className = "" }: { className?: string }) {
+  return (
+    <div
+      className={`inline-flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5 text-sm font-semibold tracking-wide text-forest ${className}`}
+    >
+      <span className="inline-flex items-center gap-1.5">
+        <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
+        Domingo 4 de Octubre
+      </span>
+      <span className="text-gold/70" aria-hidden="true">·</span>
+      <span>{EVENT_TIME_LABEL}</span>
+      <span className="text-gold/70" aria-hidden="true">·</span>
+      <span>{EVENT_PLATFORM}</span>
+      <span className="text-gold/70" aria-hidden="true">·</span>
+      <span>Gratuito</span>
+      <span className="text-gold/70" aria-hidden="true">·</span>
+      <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
+        Cupos limitados
+      </span>
+    </div>
+  );
+}
+
 function Index() {
   return (
     <div className="min-h-screen bg-background">
