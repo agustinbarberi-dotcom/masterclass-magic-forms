@@ -55,7 +55,7 @@ function GraciasPage() {
   const eventMeta = `${EVENT_DATE_LABEL.toUpperCase()}  ·  ${EVENT_TIME_LABEL}  ·  EVENTO ONLINE EXCLUSIVO`;
 
   return (
-    <div className="flex min-h-screen flex-col bg-[#F7FAFF] text-foreground">
+    <div className="flex min-h-screen flex-col bg-blue-bg text-foreground">
       {/* Header */}
       <header className="w-full border-b border-blue-soft/60 bg-white/70 px-4 py-4 backdrop-blur-sm">
         <div className="mx-auto flex max-w-xl items-center justify-center">
