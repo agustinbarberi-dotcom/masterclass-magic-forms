@@ -36,6 +36,24 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formError, setFormError] = useState<string | null>(null);
   const [pais, setPais] = useState("Colombia");
+  const nombreRef = useRef<HTMLInputElement>(null);
+  const whatsappRef = useRef<HTMLInputElement>(null);
+
+  // Relleno automático: recupera los datos guardados del navegador
+  useEffect(() => {
+    try {
+      const saved = localStorage.getItem("macasoul_lead");
+      if (!saved) return;
+      const data = JSON.parse(saved) as { nombre?: string; whatsapp?: string; pais?: string };
+      if (data.nombre && nombreRef.current && !nombreRef.current.value)
+        nombreRef.current.value = data.nombre;
+      if (data.whatsapp && whatsappRef.current && !whatsappRef.current.value)
+        whatsappRef.current.value = data.whatsapp;
+      if (data.pais) setPais(data.pais);
+    } catch {
+      /* ignorar */
+    }
+  }, []);
 
   const labelCls = cn(
     "mb-1.5 block text-[0.72rem] tracking-[0.16em] uppercase",
