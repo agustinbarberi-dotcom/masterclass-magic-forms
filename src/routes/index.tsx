@@ -3,6 +3,8 @@ import { Countdown } from "@/components/Countdown";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
 import {
+  EVENT_PLATFORM,
+  EVENT_TIME_LABEL,
   SOCIAL_LINKS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.jpg";
