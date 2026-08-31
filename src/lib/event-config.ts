@@ -85,3 +85,28 @@ export const COUNTRY_CODES: Record<string, string> = {
   Venezuela: "+58",
   "Otro país": "",
 };
+
+export const COUNTRY_FLAGS: Record<string, string> = {
+  Argentina: "🇦🇷",
+  Bolivia: "🇧🇴",
+  Chile: "🇨🇱",
+  Colombia: "🇨🇴",
+  "Costa Rica": "🇨🇷",
+  Cuba: "🇨🇺",
+  Ecuador: "🇪🇨",
+  "El Salvador": "🇸🇻",
+  España: "🇪🇸",
+  "Estados Unidos": "🇺🇸",
+  Guatemala: "🇬🇹",
+  Honduras: "🇭🇳",
+  México: "🇲🇽",
+  Nicaragua: "🇳🇮",
+  Panamá: "🇵🇦",
+  Paraguay: "🇵🇾",
+  Perú: "🇵🇪",
+  "Puerto Rico": "🇵🇷",
+  "República Dominicana": "🇩🇴",
+  Uruguay: "🇺🇾",
+  Venezuela: "🇻🇪",
+  "Otro país": "🌎",
+};

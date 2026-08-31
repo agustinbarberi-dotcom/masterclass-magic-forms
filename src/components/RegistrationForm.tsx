@@ -5,6 +5,7 @@ import { Loader2, AlertTriangle } from "lucide-react";
 import {
   COUNTRIES,
   COUNTRY_CODES,
+  COUNTRY_FLAGS,
   GOOGLE_SCRIPT_URL,
   EVENT_DATE_LABEL,
 } from "@/lib/event-config";
@@ -34,6 +35,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formError, setFormError] = useState<string | null>(null);
+  const [pais, setPais] = useState("Colombia");
 
   const labelCls = cn(
     "mb-1.5 block text-[0.72rem] tracking-[0.16em] uppercase",
@@ -140,20 +142,35 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
           <label htmlFor={`${id}-whatsapp`} className={labelCls}>
             Número de WhatsApp
           </label>
-          <div className="flex gap-2">
-            <select
-              id={`${id}-pais`}
-              name="pais"
-              defaultValue="Colombia"
-              aria-label="País"
-              className={cn(fieldCls, "w-[38%] shrink-0 px-3")}
-            >
-              {COUNTRIES.map((c) => (
-                <option key={c} value={c}>
-                  {c}
-                </option>
-              ))}
-            </select>
+          <div
+            className={cn(
+              fieldCls,
+              "flex items-center gap-1 px-2 py-0 focus-within:border-gold focus-within:ring-2 focus-within:ring-gold/40",
+            )}
+          >
+            <div className="relative flex shrink-0 items-center gap-1 pl-1">
+              <span aria-hidden="true" className="text-lg leading-none">
+                {COUNTRY_FLAGS[pais] ?? "🌎"}
+              </span>
+              <span className="text-base tabular-nums">{COUNTRY_CODES[pais]}</span>
+              <select
+                id={`${id}-pais`}
+                name="pais"
+                value={pais}
+                onChange={(e) => setPais(e.target.value)}
+                aria-label="País"
+                className="absolute inset-0 w-full cursor-pointer opacity-0"
+              >
+                {COUNTRIES.map((c) => (
+                  <option key={c} value={c}>
+                    {`${COUNTRY_FLAGS[c] ?? "🌎"} ${c} ${COUNTRY_CODES[c]}`}
+                  </option>
+                ))}
+              </select>
+              <span aria-hidden="true" className="text-xs opacity-50">
+                ▾
+              </span>
+            </div>
             <input
               id={`${id}-whatsapp`}
               name="whatsapp"
@@ -163,7 +180,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
               placeholder="300 123 4567"
               aria-invalid={!!errors.whatsapp}
               aria-describedby={errors.whatsapp ? `${id}-whatsapp-error` : undefined}
-              className={fieldCls}
+              className="w-full bg-transparent px-2 py-3 text-base outline-none placeholder:text-muted-foreground/70"
             />
           </div>
           {errors.whatsapp && (
@@ -172,6 +189,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
             </p>
           )}
         </div>
+
       </div>
 
       <button
