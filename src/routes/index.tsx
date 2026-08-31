@@ -212,7 +212,16 @@ function Index() {
               Te enseñaron a mirar las ramas, no la raíz.
             </p>
           </Reveal>
+          <Reveal delay={180} className="mt-10 flex justify-center">
+            <a
+              href="#registro"
+              className="inline-flex rounded-full bg-forest px-8 py-3.5 text-sm font-semibold tracking-wide text-forest-foreground shadow-soft transition-colors hover:bg-forest/90"
+            >
+              Reservar mi lugar
+            </a>
+          </Reveal>
         </div>
+
       </section>
 
       {/* LA CLASE */}
