@@ -307,9 +307,13 @@ function Index() {
                   </li>
                 ))}
               </ul>
+              <div className="mt-10 flex justify-center sm:justify-start">
+                <GoldButton>Reservar mi lugar</GoldButton>
+              </div>
             </Reveal>
           </div>
         </div>
+
       </section>
 
 
