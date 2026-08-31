@@ -318,12 +318,9 @@ function Index() {
               </li>
             ))}
           </ul>
-          <p className="mx-auto mt-8 max-w-2xl text-xs leading-relaxed text-muted-foreground">
-            Este evento tiene fines educativos e informativos y no sustituye el consejo, diagnóstico
-            ni tratamiento médico profesional. Consulta siempre a tu profesional de salud.
-          </p>
         </div>
       </footer>
+
     </div>
   );
 }
