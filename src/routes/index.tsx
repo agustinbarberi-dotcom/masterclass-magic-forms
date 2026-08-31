@@ -112,7 +112,6 @@ function Index() {
             <span className="font-serif text-xl tracking-[0.2em] text-forest uppercase">
               Macasoul
             </span>
-            <Countdown size="sm" />
           </div>
           <div className="flex justify-end">
             <a
@@ -124,6 +123,7 @@ function Index() {
           </div>
         </div>
       </header>
+
 
       {/* HERO — promesa principal */}
       <section className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-28">
