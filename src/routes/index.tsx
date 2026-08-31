@@ -10,7 +10,7 @@ import {
   TESTIMONIALS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.jpg";
-import macaPortrait from "@/assets/maca-portrait.jpg";
+import macaPortraitAsset from "@/assets/maca-portrait.jpg.asset.json";
 import { Quote } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -117,7 +117,7 @@ function Index() {
         <div className="relative mx-auto max-w-5xl px-5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">
-              Evento único y exclusivo · 20 de septiembre · Cupos limitados
+              Evento exclusivo · Domingo 4 de octubre · Única vez en el año · Cupos limitados
             </p>
             <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
@@ -125,11 +125,11 @@ function Index() {
             <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
               Esta clase no es para todas. Es para la mujer que ya probó de todo, que sigue
               inflamada, sin energía y sin respuestas —y que está lista, por fin, de sanar desde
-              la raíz. Evento único y exclusivo. En vivo. Conmigo.
+              la raíz. Un evento exclusivo. En vivo. Una sola vez al año. Conmigo.
             </p>
 
             <p className="mt-8 text-sm tracking-wide text-forest">
-              20 de septiembre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
+              Domingo 4 de octubre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
               {EVENT_PLATFORM}
             </p>
 
@@ -158,8 +158,8 @@ function Index() {
               Reserva tu lugar
             </h2>
             <p className="mt-5 text-sm font-medium tracking-wide text-forest">
-              20 de septiembre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
-              {EVENT_PLATFORM} · Sin costo · Cupos limitados
+              Domingo 4 de octubre de 2026 · {EVENT_TIME_LABEL} ({EVENT_TIMEZONE_LABEL}) · En vivo por{" "}
+              {EVENT_PLATFORM} · Sin costo · Evento exclusivo · Única vez en el año
             </p>
           </Reveal>
 
@@ -238,8 +238,8 @@ function Index() {
             <Reveal className="shrink-0">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
-                src={macaPortrait}
-                alt="[FOTO DE MACA] Retrato de Macarena Cárdenas"
+                src={macaPortraitAsset.url}
+                alt="Retrato de Macarena Cárdenas"
                 width={1008}
                 height={1312}
                 loading="lazy"
@@ -324,12 +324,12 @@ function Index() {
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto grid max-w-5xl gap-14 px-5 lg:grid-cols-2 lg:items-center">
           <Reveal>
-            <p className="eyebrow text-gold">Evento único y exclusivo</p>
+            <p className="eyebrow text-gold">Evento exclusivo · Única vez en el año</p>
             <h2 className="mt-4 text-3xl sm:text-[2.6rem]">
-              Puedes seguir igual. O puedes reservar tu lugar conmigo antes de que se acaben.
+              Puedes seguir igual. O puedes reservar tu lugar en este evento exclusivo antes de que se acaben.
             </h2>
             <p className="mt-6 text-base text-forest-foreground/80">
-              Es gratis. Es en vivo. Es con cupos limitados —y cuando se cierren, se cierran.
+              Es gratis. Es en vivo. Es una sola vez al año —y cuando se cierren los cupos, se cierran.
             </p>
             <div className="mt-10">
               <Countdown />
