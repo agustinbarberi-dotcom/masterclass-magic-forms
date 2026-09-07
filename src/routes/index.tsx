@@ -91,8 +91,6 @@ function EventMeta({ className = "" }: { className?: string }) {
         <span className="text-gold/70" aria-hidden="true">·</span>
         <span>{EVENT_PLATFORM}</span>
         <span className="text-gold/70" aria-hidden="true">·</span>
-        <span>Gratuito</span>
-        <span className="text-gold/70" aria-hidden="true">·</span>
         <span className="rounded-full border border-gold/40 px-2.5 py-0.5 text-xs font-bold tracking-wider text-gold uppercase">
           Cupos limitados
         </span>
