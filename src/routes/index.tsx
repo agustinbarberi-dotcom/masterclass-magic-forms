@@ -81,7 +81,7 @@ function GoldButton({
 function EventMeta({ className = "" }: { className?: string }) {
   return (
     <div className={`text-sm font-semibold tracking-wide text-forest ${className}`}>
-      <div className="flex flex-wrap items-center justify-center gap-x-2 gap-y-1.5">
+      <div className="flex flex-nowrap items-center justify-center gap-x-1.5 text-xs sm:gap-x-2 sm:text-sm">
         <span className="inline-flex items-center gap-1.5">
           <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
           Domingo 4 de Octubre
