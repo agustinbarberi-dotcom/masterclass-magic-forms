@@ -24,7 +24,7 @@ export const GOOGLE_SCRIPT_URL =
 
 /** Grupo de WhatsApp del evento. */
 export const WHATSAPP_GROUP_URL =
-  "https://chat.whatsapp.com/J4tuxHRyRFDBbL9PCjMdHN?mode=gi_t";
+  "https://chat.whatsapp.com/CYyriKoV7leDkMIChINRYM?mode=gi_t";
 
 /** [REPETICIÓN] respuesta del FAQ sobre la grabación */
 export const REPLAY_ANSWER =
