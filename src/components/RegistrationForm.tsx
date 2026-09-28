@@ -1,4 +1,4 @@
-import { useNavigate } from "@tanstack/react-router";
+import { useNavigate, useRouter } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { Loader2, AlertTriangle } from "lucide-react";
@@ -32,12 +32,18 @@ type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 
 export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "light" | "dark" }) {
   const navigate = useNavigate();
+  const router = useRouter();
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formError, setFormError] = useState<string | null>(null);
   const [pais, setPais] = useState("Colombia");
   const nombreRef = useRef<HTMLInputElement>(null);
   const whatsappRef = useRef<HTMLInputElement>(null);
+
+  // Precarga la página de gracias para que la redirección sea instantánea
+  useEffect(() => {
+    router.preloadRoute({ to: "/gracias" }).catch(() => {});
+  }, [router]);
 
   // Relleno automático: recupera los datos guardados del navegador
   useEffect(() => {
@@ -103,12 +109,17 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
       telefono,
     };
 
+    // Envío en segundo plano: keepalive garantiza que el POST sobreviva
+    // a la navegación, así redirigimos de inmediato sin esperar respuesta.
     try {
-      await fetch(GOOGLE_SCRIPT_URL, {
+      fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
+        keepalive: true,
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(payload),
+      }).catch(() => {
+        /* el envío continúa en segundo plano */
       });
 
       try {
@@ -121,12 +132,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
       }
 
       form.reset();
-      setStatus("success");
-
-      // breve feedback visual antes de redirigir a la página de gracias
-      setTimeout(() => {
-        navigate({ to: "/gracias" });
-      }, 1200);
+      navigate({ to: "/gracias" });
     } catch {
       setStatus("error");
       setFormError("No pudimos enviar tu registro. Intenta de nuevo en unos segundos.");
