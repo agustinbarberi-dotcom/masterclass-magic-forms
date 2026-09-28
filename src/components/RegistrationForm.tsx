@@ -40,6 +40,11 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
   const nombreRef = useRef<HTMLInputElement>(null);
   const whatsappRef = useRef<HTMLInputElement>(null);
 
+  // Precarga la página de gracias para que la redirección sea instantánea
+  useEffect(() => {
+    router.preloadRoute({ to: "/gracias" }).catch(() => {});
+  }, [router]);
+
   // Relleno automático: recupera los datos guardados del navegador
   useEffect(() => {
     try {
