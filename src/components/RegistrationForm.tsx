@@ -1,4 +1,4 @@
-import { useNavigate } from "@tanstack/react-router";
+import { useNavigate, useRouter } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { z } from "zod";
 import { Loader2, AlertTriangle } from "lucide-react";
@@ -32,6 +32,7 @@ type Errors = Partial<Record<keyof z.infer<typeof schema>, string>>;
 
 export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "light" | "dark" }) {
   const navigate = useNavigate();
+  const router = useRouter();
   const [errors, setErrors] = useState<Errors>({});
   const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
   const [formError, setFormError] = useState<string | null>(null);
