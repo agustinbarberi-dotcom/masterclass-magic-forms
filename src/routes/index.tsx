@@ -40,7 +40,7 @@ export const Route = createFileRoute("/")({
 });
 
 const painPoints = [
-  "Haces lo mismo que hacías a los 40, y el peso ya no baja. Sobre todo en el abdomen.",
+  "Haces lo mismo que hacías a los 25, y el peso ya no baja. Sobre todo en el abdomen.",
   "Duermes y amaneces cansada. A media tarde ya no tienes energía.",
   'Te inflamas con casi todo, aunque comas "sano".',
   "Se te olvidan las cosas, te cuesta concentrarte y cambias de humor sin entender por qué.",
@@ -199,7 +199,7 @@ function Index() {
             </h2>
             <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
               <span className="font-serif text-forest italic">
-                "Tengo 53 años y me siento de 80."
+                "Tengo 45 años y me siento de 60."
               </span>{" "}
               Si alguna vez pensaste algo parecido, quiero que leas esto despacio.
             </p>
@@ -221,7 +221,7 @@ function Index() {
             </p>
             <p className="mx-auto mt-6 max-w-lg text-center text-base leading-relaxed text-muted-foreground">
               Tu cuerpo cambió las reglas y nadie te explicó las nuevas. Lo que te funcionaba a los
-              35 hoy no alcanza, y hacer más de lo mismo te agota más.
+              25 hoy no alcanza, y seguir haciendo lo mismo te agota más.
             </p>
           </Reveal>
           <Reveal delay={180} className="mt-10 flex justify-center">
