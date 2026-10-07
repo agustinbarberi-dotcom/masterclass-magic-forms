@@ -55,7 +55,7 @@ export function QuestionsGenerator() {
           onChange={(e) => setTexto(e.target.value)}
           rows={5}
           maxLength={2000}
-          placeholder="Ej: Tengo 47 años, me siento inflamada, duermo mal y quiero entender qué pasa con mis hormonas en la perimenopausia…"
+          placeholder="Ej: Tengo 45 años, me siento inflamada, duermo mal y quiero entender qué pasa con mis hormonas en la perimenopausia…"
           className="w-full rounded-2xl border border-border bg-background px-5 py-4 text-left text-base text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary"
         />
         <div className="flex justify-center gap-3">
