@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
+import { QuestionsGenerator } from "@/components/QuestionsGenerator";
 
 import {
   EVENT_PLATFORM,
@@ -250,6 +251,22 @@ function Index() {
           <Reveal delay={160} className="mt-10 flex justify-center">
             <GoldButton>Quiero mi lugar</GoldButton>
           </Reveal>
+        </div>
+      </section>
+
+      {/* PREGUNTAS PERSONALIZADAS */}
+      <section id="preguntas" className="border-t border-border/60 py-24">
+        <div className="mx-auto max-w-3xl px-5 text-center">
+          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Prepárate para la clase</p>
+          <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">
+            Llega con <em>tus</em> preguntas listas
+          </h2>
+          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
+            Cuéntame tus objetivos y dudas sobre tu bienestar hormonal y te preparo una lista de preguntas personalizadas para llevar al evento.
+          </p>
+          <div className="mt-10">
+            <QuestionsGenerator />
+          </div>
         </div>
       </section>
 

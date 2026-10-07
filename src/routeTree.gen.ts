@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as GraciasRouteImport } from './routes/gracias'
+import { Route as ApiPreguntasRouteImport } from './routes/api/preguntas'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -22,31 +23,40 @@ const GraciasRoute = GraciasRouteImport.update({
   path: '/gracias',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPreguntasRoute = ApiPreguntasRouteImport.update({
+  id: '/api/preguntas',
+  path: '/api/preguntas',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/gracias': typeof GraciasRoute
+  '/api/preguntas': typeof ApiPreguntasRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/gracias': typeof GraciasRoute
+  '/api/preguntas': typeof ApiPreguntasRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/gracias': typeof GraciasRoute
+  '/api/preguntas': typeof ApiPreguntasRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/gracias'
+  fullPaths: '/' | '/gracias' | '/api/preguntas'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/gracias'
-  id: '__root__' | '/' | '/gracias'
+  to: '/' | '/gracias' | '/api/preguntas'
+  id: '__root__' | '/' | '/gracias' | '/api/preguntas'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   GraciasRoute: typeof GraciasRoute
+  ApiPreguntasRoute: typeof ApiPreguntasRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -65,12 +75,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof GraciasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/preguntas': {
+      id: '/api/preguntas'
+      path: '/api/preguntas'
+      fullPath: '/api/preguntas'
+      preLoaderRoute: typeof ApiPreguntasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   GraciasRoute: GraciasRoute,
+  ApiPreguntasRoute: ApiPreguntasRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
