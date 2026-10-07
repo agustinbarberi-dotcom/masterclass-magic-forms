@@ -16,21 +16,21 @@ export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
       {
-        title: "Un encuentro en vivo · 4 de octubre | Macasoul",
+        title: "Cambio hormonal después de los 40 · Clase en vivo | Macasoul",
       },
       {
         name: "description",
         content:
-          "Una clase íntima y en vivo con Macarena Cárdenas para mujeres que están cansadas de seguir cansadas. Cupos limitados · Domingo 4 de octubre de 2026.",
+          "Una clase en vivo de 60 minutos con Macarena Cárdenas para mujeres de más de 40 que están atravesando el cambio hormonal. Evento exclusivo · Domingo 4 de octubre · Cupos limitados.",
       },
       {
         property: "og:title",
-        content: "Un encuentro en vivo · 4 de octubre | Macasoul",
+        content: "Cambio hormonal después de los 40 · Clase en vivo | Macasoul",
       },
       {
         property: "og:description",
         content:
-          "Inflamada, agotada y sin respuestas. Una clase en vivo, con cupos limitados, para empezar a sanar desde la raíz.",
+          "Comes bien, te cuidas y tu cuerpo dejó de responderte. Te muestro qué cambió y por dónde empezar a recuperarlo. En vivo, una sola vez al año.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -40,17 +40,19 @@ export const Route = createFileRoute("/")({
 });
 
 const painPoints = [
-  'Vas de médico en médico. Te dicen que "todo está normal". Y tú sabes que no es normal sentirse así.',
-  "Probaste dietas, suplementos, rutinas, reposos. Nada te queda. Nada te dura.",
-  "Te miras al espejo y no te reconoces: inflamada, agotada, con un cuerpo que ya no sientes tuyo.",
-  "Empiezas con toda la intención… y a los pocos días lo abandonas. Y te culpas. Otra vez.",
+  "Haces lo mismo que hacías a los 40, y el peso ya no baja. Sobre todo en el abdomen.",
+  "Duermes y amaneces cansada. A media tarde ya no tienes energía.",
+  'Te inflamas con casi todo, aunque comas "sano".',
+  "Se te olvidan las cosas, te cuesta concentrarte y cambias de humor sin entender por qué.",
+  'Tus exámenes salen bien. O te dicen "es la edad".',
+  "Ya probaste dietas, detox, suplementos y médicos. Te ayudan un tiempo y vuelves al mismo lugar.",
 ];
 
 const learnings = [
-  'Por qué "hacer todo bien" no te está funcionando —y qué mirar en su lugar.',
-  "El mapa completo: cómo se conectan tus hormonas, tu inflamación, tu digestión y tu energía.",
-  "Los primeros pasos para desinflamar y recuperar tu energía desde la raíz.",
-  "Por qué empiezas y abandonas —y cómo cambiarlo sin depender de la fuerza de voluntad.",
+  'Por qué "hacer todo bien" dejó de funcionarte después de los 40, y qué cambió en tu cuerpo.',
+  "El mapa completo: cómo se conectan tus hormonas, tu digestión, tu inflamación, tu peso y tu energía, para que dejes de tratar síntomas sueltos.",
+  "Por dónde empezar a desinflamar y recuperar energía esta misma semana.",
+  "Cómo sostenerlo sin empezar de cero cada lunes ni depender de la fuerza de voluntad.",
 ];
 
 const credentials = [
@@ -143,12 +145,15 @@ function Index() {
               Evento exclusivo · Domingo 4 de octubre · Única vez en el año · Cupos limitados
             </p>
             <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
-              Estás cansada de estar cansada. Y nadie te ha dado una respuesta real.
+              Comes bien. Te cuidas.
+              <br />
+              Y tu cuerpo dejó de responderte.
             </h1>
             <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
-              Un encuentro para transformar años de probar de todo sin resultados en vitalidad,
-              claridad y bienestar sostenido para el resto de tu vida. Sin necesitar seguir buscando
-              la próxima solución.
+              Una clase en vivo de 60 minutos para mujeres de más de 40 que están atravesando el
+              cambio hormonal y ya no se reconocen: el peso que no baja, el cansancio, la
+              inflamación, la niebla mental. Te muestro qué cambió en tu cuerpo y por dónde empezar
+              a recuperarlo.
             </p>
 
 
@@ -188,10 +193,16 @@ function Index() {
       <section className="border-t border-border/60 py-24">
         <div className="mx-auto max-w-2xl px-5">
           <Reveal>
-            <p className="eyebrow">Te entiendo</p>
+            <p className="eyebrow">Si te pasa esto</p>
             <h2 className="mt-4 text-3xl text-forest sm:text-4xl">
-              Yo también estuve ahí. Sé lo que se siente.
+              Esta clase es para ti
             </h2>
+            <p className="mt-6 max-w-lg text-lg leading-relaxed text-muted-foreground">
+              <span className="font-serif text-forest italic">
+                "Tengo 53 años y me siento de 80."
+              </span>{" "}
+              Si alguna vez pensaste algo parecido, quiero que leas esto despacio.
+            </p>
           </Reveal>
           <ul className="mt-12 space-y-8">
             {painPoints.map((text, i) => (
@@ -204,9 +215,13 @@ function Index() {
           </ul>
           <Reveal delay={140}>
             <p className="mt-16 text-center font-serif text-2xl font-bold leading-snug text-forest sm:text-3xl">
-              No es falta de voluntad.
+              No es la edad.
               <br />
-              Te enseñaron a mirar las ramas, no la raíz.
+              Y no es falta de disciplina.
+            </p>
+            <p className="mx-auto mt-6 max-w-lg text-center text-base leading-relaxed text-muted-foreground">
+              Tu cuerpo cambió las reglas y nadie te explicó las nuevas. Lo que te funcionaba a los
+              35 hoy no alcanza, y hacer más de lo mismo te agota más.
             </p>
           </Reveal>
           <Reveal delay={180} className="mt-10 flex justify-center">
@@ -227,7 +242,7 @@ function Index() {
           <Reveal>
             <p className="eyebrow">La clase</p>
             <h2 className="mx-auto mt-4 max-w-xl text-3xl text-forest sm:text-4xl">
-              Lo que te voy a contar en una hora juntas
+              Lo que te vas a llevar en una hora
             </h2>
           </Reveal>
           <ol className="mx-auto mt-12 max-w-xl space-y-8 text-left sm:text-center">
@@ -243,7 +258,12 @@ function Index() {
             ))}
           </ol>
           <Reveal delay={120}>
-            <p className="mx-auto mt-12 max-w-lg text-base text-muted-foreground">
+            <p className="mt-14 text-center font-serif text-2xl font-bold leading-snug text-forest sm:text-3xl">
+              Una hora. En vivo.
+              <br />
+              Una sola vez al año.
+            </p>
+            <p className="mx-auto mt-6 max-w-lg text-base text-muted-foreground">
               Sin humo. Sin recetas milagro. Solo lo que yo aprendí, validé en cientos de mujeres y
               hoy te comparto.
             </p>
@@ -262,7 +282,8 @@ function Index() {
             Llega con <em>tus</em> preguntas listas
           </h2>
           <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Cuéntame tus objetivos y dudas sobre tu bienestar hormonal y te preparo una lista de preguntas personalizadas para llevar al evento.
+            Cuéntame tus objetivos y dudas sobre tu bienestar hormonal y te preparo una lista de
+            preguntas personalizadas para llevar al evento.
           </p>
           <div className="mt-10">
             <QuestionsGenerator />
@@ -286,7 +307,10 @@ function Index() {
               />
             </Reveal>
             <Reveal delay={120} className="flex flex-col items-center lg:items-start">
-              <h2 className="font-serif text-3xl font-black tracking-tight lg:text-4xl">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-gold">
+                Llevo años acompañando a mujeres en esta etapa
+              </p>
+              <h2 className="mt-4 font-serif text-3xl font-black tracking-tight lg:text-4xl">
                 Macarena Cárdenas
               </h2>
               <p className="mt-3 max-w-md text-xs font-semibold leading-relaxed tracking-[0.12em] text-gold uppercase">
@@ -295,6 +319,12 @@ function Index() {
               </p>
 
               <p className="mt-6 max-w-xl text-base leading-relaxed text-forest-foreground/85">
+                Muchas de ustedes me conocen hace tiempo. Soy nutricionista clínica, formada en
+                medicina tradicional china y medicina integrativa. Y lo que más veo en consulta es
+                esto: mujeres que se cuidan, que hacen <span className="font-semibold text-gold">"todo bien"</span>, y a
+                las que nadie les miró el cuadro completo.
+              </p>
+              <p className="mt-4 max-w-xl text-base leading-relaxed text-forest-foreground/85">
                 Nací en Chile y crecí bajo el sol del Caribe. Fui Miss Teen Colombia, Modelo del
                 Año, presenté televisión y diseñé moda a nivel internacional. Pero mientras vestía
                 cuerpos ajenos, sentí un llamado más profundo: entender la arquitectura biológica y
