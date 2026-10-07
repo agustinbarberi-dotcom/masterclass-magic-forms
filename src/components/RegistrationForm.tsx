@@ -254,7 +254,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
           tone === "dark" ? "text-forest-foreground/70" : "text-muted-foreground",
         )}
       >
-        Tu información es privada. Solo la usamos para enviarte el acceso.
+        Te enviamos el acceso por WhatsApp. Tu información es privada.
       </p>
     </form>
   );
