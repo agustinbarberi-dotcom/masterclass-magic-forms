@@ -9,7 +9,9 @@ import {
   SOCIAL_LINKS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.webp";
-import macaPortrait from "@/assets/maca-portrait.jpg";
+import macaEstudio from "@/assets/maca-estudio.webp";
+import macaRostro from "@/assets/maca-estudio-rostro.webp";
+import macaCertificado from "@/assets/maca-certificado.webp";
 import { Calendar } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -139,8 +141,17 @@ function Index() {
           className="absolute inset-0 h-full w-full object-cover opacity-20"
         />
         <div className="absolute inset-0 bg-gradient-warm opacity-90" aria-hidden="true" />
-        <div className="relative mx-auto max-w-5xl px-5">
+        <div className="relative mx-auto max-w-5xl px-5 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-12">
           <Reveal className="mx-auto max-w-3xl text-center">
+            <img
+              src={macaRostro}
+              alt="Macarena Cárdenas"
+              width={480}
+              height={480}
+              decoding="async"
+              fetchPriority="high"
+              className="mx-auto mb-6 h-28 w-28 rounded-full border-2 border-gold/60 object-cover shadow-soft lg:hidden"
+            />
             <p className="eyebrow">
               Evento exclusivo · {EVENT_DAY_LABEL} · Única vez en el año · Cupos limitados
             </p>
@@ -165,6 +176,16 @@ function Index() {
               <GoldButton className="animate-float px-8 py-4 text-base">Reservar mi lugar</GoldButton>
             </div>
 
+          </Reveal>
+          <Reveal delay={120} className="hidden lg:block">
+            <img
+              src={macaEstudio}
+              alt="Macarena Cárdenas"
+              width={1151}
+              height={1280}
+              decoding="async"
+              className="w-full rounded-3xl border border-gold/40 object-cover shadow-soft"
+            />
           </Reveal>
         </div>
       </section>
@@ -279,14 +300,13 @@ function Index() {
         <div className="mx-auto max-w-3xl px-5">
           <div className="flex flex-col items-center gap-8 text-center lg:flex-row lg:items-start lg:gap-10 lg:text-left">
             <Reveal className="shrink-0">
-              {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
-                src={macaPortrait}
-                alt="Retrato de Macarena Cárdenas"
-                width={1008}
-                height={1312}
+                src={macaCertificado}
+                alt="Macarena Cárdenas con bata blanca, sosteniendo su certificado de formación"
+                width={450}
+                height={601}
                 loading="lazy"
-                className="h-40 w-40 rounded-full border-2 border-gold/50 object-cover object-[center_22%] lg:h-44 lg:w-44"
+                className="w-56 rounded-2xl border-2 border-gold/50 object-cover shadow-soft lg:w-60"
               />
             </Reveal>
             <Reveal delay={120} className="flex flex-col items-center lg:items-start">
