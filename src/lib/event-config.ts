@@ -3,11 +3,14 @@
 // ==========================================================================
 
 /** Fecha y hora exacta del evento en formato ISO con offset de zona horaria.
- *  Domingo 4 de octubre de 2026 a las 19:00 hora Colombia (UTC-5). */
-export const EVENT_DATE_ISO = "2026-10-04T19:00:00-05:00";
+ *  Domingo 18 de octubre de 2026 a las 11:30 hora Colombia (UTC-5). */
+export const EVENT_DATE_ISO = "2026-10-18T11:30:00-05:00";
 
 /** Fecha legible para mostrar en la página y enviar al CRM. */
-export const EVENT_DATE_LABEL = "Domingo 4 de octubre de 2026";
+export const EVENT_DATE_LABEL = "Domingo 18 de octubre de 2026";
+
+/** Fecha corta para titulares y encabezados. */
+export const EVENT_DAY_LABEL = "Domingo 18 de octubre";
 
 /** [HORA] tal como se muestra en la página */
 export const EVENT_TIME_LABEL = "11:30 AM";
@@ -24,18 +27,14 @@ export const GOOGLE_SCRIPT_URL =
 
 /** Grupo de WhatsApp del evento. */
 export const WHATSAPP_GROUP_URL =
-  "https://chat.whatsapp.com/CYyriKoV7leDkMIChINRYM?mode=gi_t";
+  "https://chat.whatsapp.com/J4tuxHRyRFDBbL9PCjMdHN?mode=gi_t";
 
 /** [REPETICIÓN] respuesta del FAQ sobre la grabación */
 export const REPLAY_ANSWER =
   "[DEFINIR: ej. “Se enviará la repetición por tiempo limitado solo a las registradas.”]";
 
-/** [redes/links placeholder] */
-export const SOCIAL_LINKS = [
-  { label: "Instagram", href: "[LINK_INSTAGRAM]" },
-  { label: "WhatsApp", href: "[LINK_WHATSAPP]" },
-  { label: "Contacto", href: "[LINK_CONTACTO]" },
-];
+/** Links del footer. Vacío = no se muestra ninguno. */
+export const SOCIAL_LINKS: { label: string; href: string }[] = [];
 
 export const COUNTRIES = [
   "Argentina",

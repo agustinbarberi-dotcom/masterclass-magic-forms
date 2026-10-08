@@ -36,7 +36,7 @@ export function Countdown({ size = "lg" }: { size?: "lg" | "sm" }) {
       >
         {mounted
           ? `Faltan ${String(t.horas).padStart(2, "0")}h ${String(t.minutos).padStart(2, "0")}m`
-          : "4 de octubre"}
+          : "18 de octubre"}
       </span>
     );
   }

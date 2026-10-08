@@ -1,9 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
-import {
-  EVENT_DATE_LABEL,
-  EVENT_TIME_LABEL,
-  WHATSAPP_GROUP_URL,
-} from "@/lib/event-config";
+import { EVENT_DAY_LABEL, WHATSAPP_GROUP_URL } from "@/lib/event-config";
 
 export const Route = createFileRoute("/gracias")({
   component: GraciasPage,
@@ -13,13 +9,13 @@ export const Route = createFileRoute("/gracias")({
       {
         name: "description",
         content:
-          "Tu lugar en el evento exclusivo de Macasoul está reservado. Unite al grupo de WhatsApp para recibir el acceso.",
+          "Tu lugar en el evento exclusivo de Macasoul está reservado. Únete al grupo de WhatsApp para recibir el acceso.",
       },
       { property: "og:title", content: "Registro confirmado · Macasoul" },
       {
         property: "og:description",
         content:
-          "Tu lugar en el evento exclusivo de Macasoul está reservado. Unite al grupo de WhatsApp para recibir el acceso.",
+          "Tu lugar en el evento exclusivo de Macasoul está reservado. Únete al grupo de WhatsApp para recibir el acceso.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -52,7 +48,7 @@ function ProgressBar({ value = 80 }: { value?: number }) {
 }
 
 function GraciasPage() {
-  const eventMeta = `Evento exclusivo  ·  Domingo 4 de octubre  ·  Única vez en el año`;
+  const eventMeta = `Evento exclusivo  ·  ${EVENT_DAY_LABEL}  ·  Única vez en el año`;
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-warm text-foreground">
@@ -84,7 +80,7 @@ function GraciasPage() {
 
           <p className="mx-auto mt-6 max-w-sm text-base leading-relaxed text-muted-foreground">
             El acceso, los recordatorios y el material exclusivo de Macarena
-            llegan por WhatsApp. Unite al grupo ahora para no perderte nada.
+            llegan por WhatsApp. Únete al grupo ahora para no perderte nada.
           </p>
 
           <div className="animate-float">
@@ -102,7 +98,7 @@ function GraciasPage() {
 
           <p className="mt-4 flex items-center justify-center gap-2 text-xs text-olive/80">
             <span aria-hidden="true">⚠️</span>
-            Si no lo hacés ahora, podrías quedarte sin el acceso y los
+            Si no lo haces ahora, podrías quedarte sin el acceso y los
             materiales.
           </p>
         </div>

@@ -55,6 +55,10 @@ const QUESTIONS = [
   },
 ] as const satisfies readonly { key: Key; q: string; options: readonly string[] }[];
 
+// Los envíos salen de a uno y en orden: si llegaran cruzados al Apps Script,
+// una respuesta vieja podría pisar a la más nueva y borrar columnas.
+let sendQueue: Promise<unknown> = Promise.resolve();
+
 function computePrioridad(a: Record<Key, string>) {
   if (!a.edad || !a.sintoma || !a.inversion_salud || !a.acompanamiento) return "";
   const ok =
@@ -94,26 +98,27 @@ function PreguntasPage() {
     if (!q) return;
     answers.current = { ...answers.current, [q.key]: option };
     const a = answers.current;
-    try {
+    const body = JSON.stringify({
+      tipo: "calificacion",
+      telefono: lead.telefono,
+      nombre: lead.nombre,
+      edad: a.edad,
+      sintoma: a.sintoma,
+      inversion_salud: a.inversion_salud,
+      acompanamiento: a.acompanamiento,
+      prioridad: computePrioridad(a),
+    });
+    sendQueue = sendQueue.then(() =>
       fetch(GOOGLE_SCRIPT_URL, {
         method: "POST",
         mode: "no-cors",
         keepalive: true,
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          tipo: "calificacion",
-          telefono: lead.telefono,
-          nombre: lead.nombre,
-          edad: a.edad,
-          sintoma: a.sintoma,
-          inversion_salud: a.inversion_salud,
-          acompanamiento: a.acompanamiento,
-          prioridad: computePrioridad(a),
-        }),
-      }).catch(() => {});
-    } catch {
-      /* nunca frenar */
-    }
+        body,
+      }).catch(() => {
+        /* nunca frenar */
+      }),
+    );
     setPicked(option);
     setTimeout(() => {
       setPicked(null);

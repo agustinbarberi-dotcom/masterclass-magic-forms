@@ -1,15 +1,15 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
-import { QuestionsGenerator } from "@/components/QuestionsGenerator";
 
 import {
+  EVENT_DAY_LABEL,
   EVENT_PLATFORM,
   EVENT_TIME_LABEL,
   SOCIAL_LINKS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.webp";
-import macaPortraitAsset from "@/assets/maca-portrait.jpg.asset.json";
+import macaPortrait from "@/assets/maca-portrait.jpg";
 import { Calendar } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -21,7 +21,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Una clase en vivo de 60 minutos con Macarena Cárdenas para mujeres de más de 40 que están atravesando el cambio hormonal. Evento exclusivo · Domingo 4 de octubre · Cupos limitados.",
+          `Una clase en vivo de 60 minutos con Macarena Cárdenas para mujeres de más de 40 que están atravesando el cambio hormonal. Evento exclusivo · ${EVENT_DAY_LABEL} · Cupos limitados.`,
       },
       {
         property: "og:title",
@@ -87,7 +87,7 @@ function EventMeta({ className = "" }: { className?: string }) {
       <div className="flex flex-nowrap items-center justify-center gap-x-1.5 text-xs sm:gap-x-2 sm:text-sm">
         <span className="inline-flex items-center gap-1.5">
           <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
-          Domingo 4 de Octubre
+          {EVENT_DAY_LABEL}
         </span>
         <span className="text-gold/70" aria-hidden="true">·</span>
         <span>{EVENT_TIME_LABEL}</span>
@@ -142,7 +142,7 @@ function Index() {
         <div className="relative mx-auto max-w-5xl px-5">
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow">
-              Evento exclusivo · Domingo 4 de octubre · Única vez en el año · Cupos limitados
+              Evento exclusivo · {EVENT_DAY_LABEL} · Única vez en el año · Cupos limitados
             </p>
             <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Comes bien. Te cuidas.
@@ -274,23 +274,6 @@ function Index() {
         </div>
       </section>
 
-      {/* PREGUNTAS PERSONALIZADAS */}
-      <section id="preguntas" className="border-t border-border/60 py-24">
-        <div className="mx-auto max-w-3xl px-5 text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.3em] text-primary">Prepárate para la clase</p>
-          <h2 className="mt-4 font-display text-3xl font-bold sm:text-4xl">
-            Llega con <em>tus</em> preguntas listas
-          </h2>
-          <p className="mx-auto mt-4 max-w-xl text-muted-foreground">
-            Cuéntame tus objetivos y dudas sobre tu bienestar hormonal y te preparo una lista de
-            preguntas personalizadas para llevar al evento.
-          </p>
-          <div className="mt-10">
-            <QuestionsGenerator />
-          </div>
-        </div>
-      </section>
-
       {/* QUIÉN SOY */}
       <section className="bg-forest py-24 text-forest-foreground">
         <div className="mx-auto max-w-3xl px-5">
@@ -298,7 +281,7 @@ function Index() {
             <Reveal className="shrink-0">
               {/* [FOTO DE MACA] — reemplazar por retrato real */}
               <img
-                src={macaPortraitAsset.url}
+                src={macaPortrait}
                 alt="Retrato de Macarena Cárdenas"
                 width={1008}
                 height={1312}
@@ -365,15 +348,17 @@ function Index() {
       <footer className="border-t border-border/60 py-12">
         <div className="mx-auto max-w-4xl px-5 text-center">
           <p className="font-serif text-lg tracking-[0.22em] text-forest uppercase">Macasoul</p>
-          <ul className="mt-5 flex flex-wrap justify-center gap-5 text-sm text-muted-foreground">
-            {SOCIAL_LINKS.map((l) => (
-              <li key={l.label}>
-                <a href={l.href} className="transition-colors hover:text-gold">
-                  {l.label}
-                </a>
-              </li>
-            ))}
-          </ul>
+          {SOCIAL_LINKS.length > 0 && (
+            <ul className="mt-5 flex flex-wrap justify-center gap-5 text-sm text-muted-foreground">
+              {SOCIAL_LINKS.map((l) => (
+                <li key={l.label}>
+                  <a href={l.href} className="transition-colors hover:text-gold">
+                    {l.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          )}
         </div>
       </footer>
 
