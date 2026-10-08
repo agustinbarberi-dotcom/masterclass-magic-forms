@@ -19,7 +19,7 @@ export const Route = createFileRoute("/preguntas")({
 
 type Key = "edad" | "sintoma" | "inversion_salud" | "acompanamiento";
 
-const QUESTIONS: { key: Key; q: string; options: string[] }[] = [
+const QUESTIONS = [
   { key: "edad", q: "¿Qué edad tienes?", options: ["Menos de 40", "Entre 40 y 49", "Entre 50 y 59", "60 o más"] },
   {
     key: "sintoma",
@@ -53,15 +53,15 @@ const QUESTIONS: { key: Key; q: string; options: string[] }[] = [
       "Por ahora solo quiero información gratuita",
     ],
   },
-];
+] as const satisfies readonly { key: Key; q: string; options: readonly string[] }[];
 
 function computePrioridad(a: Record<Key, string>) {
   if (!a.edad || !a.sintoma || !a.inversion_salud || !a.acompanamiento) return "";
   const ok =
     (a.edad === QUESTIONS[0].options[1] || a.edad === QUESTIONS[0].options[2]) &&
     a.sintoma !== QUESTIONS[1].options[4] &&
-    QUESTIONS[2].options.slice(0, 2).includes(a.inversion_salud) &&
-    QUESTIONS[3].options.slice(0, 2).includes(a.acompanamiento);
+    (QUESTIONS[2].options.slice(0, 2) as readonly string[]).includes(a.inversion_salud) &&
+    (QUESTIONS[3].options.slice(0, 2) as readonly string[]).includes(a.acompanamiento);
   return ok ? "ALTA" : "NORMAL";
 }
 
@@ -91,6 +91,7 @@ function PreguntasPage() {
   function choose(option: string) {
     if (!lead || picked) return;
     const q = QUESTIONS[step];
+    if (!q) return;
     answers.current = { ...answers.current, [q.key]: option };
     const a = answers.current;
     try {
@@ -122,7 +123,7 @@ function PreguntasPage() {
   }
 
   if (!lead) return <div className="min-h-screen bg-gradient-warm" />;
-  const q = QUESTIONS[step];
+  const q = QUESTIONS[step] ?? QUESTIONS[0];
 
   return (
     <div className="flex min-h-screen flex-col bg-gradient-warm text-foreground">
