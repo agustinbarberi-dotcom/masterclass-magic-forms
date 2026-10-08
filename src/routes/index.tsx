@@ -161,10 +161,8 @@ function Index() {
               Y tu cuerpo dejó de responderte.
             </h1>
             <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
-              Una clase en vivo de 60 minutos para mujeres de más de 40 que están atravesando el
-              cambio hormonal y ya no se reconocen: el peso que no baja, el cansancio, la
-              inflamación, la niebla mental. Te muestro qué cambió en tu cuerpo y por dónde empezar
-              a recuperarlo.
+              Una clase en vivo para mujeres de más de 40: entiende por qué tu cuerpo cambió las
+              reglas y qué hacer esta misma semana.
             </p>
 
 
