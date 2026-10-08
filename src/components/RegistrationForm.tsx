@@ -42,7 +42,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
 
   // Precarga la página de gracias para que la redirección sea instantánea
   useEffect(() => {
-    router.preloadRoute({ to: "/gracias" }).catch(() => {});
+    router.preloadRoute({ to: "/preguntas" }).catch(() => {});
   }, [router]);
 
   // Relleno automático: recupera los datos guardados del navegador
@@ -131,8 +131,17 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
         /* ignorar */
       }
 
+      try {
+        sessionStorage.setItem(
+          "macasoul_optin",
+          JSON.stringify({ nombre: parsed.data.nombre, telefono }),
+        );
+      } catch {
+        /* ignorar */
+      }
+
       form.reset();
-      navigate({ to: "/gracias" });
+      navigate({ to: "/preguntas" });
     } catch {
       setStatus("error");
       setFormError("No pudimos enviar tu registro. Intenta de nuevo en unos segundos.");
