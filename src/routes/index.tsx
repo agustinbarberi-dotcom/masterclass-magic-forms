@@ -179,8 +179,8 @@ function Index() {
             <img
               src={macaDoctora}
               alt="Macarena Cárdenas con bata blanca"
-              width={900}
-              height={1202}
+              width={458}
+              height={611}
               decoding="async"
               className="w-full rounded-3xl border border-gold/40 object-cover shadow-soft"
             />
