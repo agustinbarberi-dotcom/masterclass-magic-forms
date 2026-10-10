@@ -30,7 +30,7 @@ export const META_PIXEL_ID = "1729816064767279";
 
 /** Grupo de WhatsApp del evento. */
 export const WHATSAPP_GROUP_URL =
-  "https://chat.whatsapp.com/J4tuxHRyRFDBbL9PCjMdHN?mode=gi_t";
+  "https://chat.whatsapp.com/JVFPHahOVlE1lzJchD39QO?mode=gi_t";
 
 /** [REPETICIÓN] respuesta del FAQ sobre la grabación */
 export const REPLAY_ANSWER =
