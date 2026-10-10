@@ -9,9 +9,9 @@ import {
   SOCIAL_LINKS,
 } from "@/lib/event-config";
 import heroRoots from "@/assets/hero-roots.webp";
-import macaEstudio from "@/assets/maca-estudio.webp";
-import macaRostro from "@/assets/maca-estudio-rostro.webp";
-import macaCertificado from "@/assets/maca-certificado.webp";
+import macaDoctora from "@/assets/maca-doctora.webp";
+import macaDoctoraRostro from "@/assets/maca-doctora-rostro.webp";
+import macaEstudioCuadro from "@/assets/maca-estudio-cuadro.webp";
 import { Calendar } from "lucide-react";
 
 export const Route = createFileRoute("/")({
@@ -144,7 +144,7 @@ function Index() {
         <div className="relative mx-auto max-w-5xl px-5 lg:grid lg:grid-cols-[1.2fr_0.8fr] lg:items-center lg:gap-12">
           <Reveal className="mx-auto max-w-3xl text-center">
             <img
-              src={macaRostro}
+              src={macaDoctoraRostro}
               alt="Macarena Cárdenas"
               width={480}
               height={480}
@@ -177,10 +177,10 @@ function Index() {
           </Reveal>
           <Reveal delay={120} className="hidden lg:block">
             <img
-              src={macaEstudio}
-              alt="Macarena Cárdenas"
-              width={1151}
-              height={1280}
+              src={macaDoctora}
+              alt="Macarena Cárdenas con bata blanca"
+              width={419}
+              height={559}
               decoding="async"
               className="w-full rounded-3xl border border-gold/40 object-cover shadow-soft"
             />
@@ -299,10 +299,10 @@ function Index() {
           <div className="flex flex-col items-center gap-8 text-center lg:flex-row lg:items-start lg:gap-10 lg:text-left">
             <Reveal className="shrink-0">
               <img
-                src={macaCertificado}
-                alt="Macarena Cárdenas con bata blanca, sosteniendo su certificado de formación"
-                width={450}
-                height={601}
+                src={macaEstudioCuadro}
+                alt="Macarena Cárdenas en retrato de estudio"
+                width={480}
+                height={640}
                 loading="lazy"
                 className="w-56 rounded-2xl border-2 border-gold/50 object-cover shadow-soft lg:w-60"
               />
