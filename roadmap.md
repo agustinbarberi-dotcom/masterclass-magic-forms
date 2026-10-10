@@ -7,3 +7,4 @@
 ## Pendiente
 - Foto chica en el encabezado, al costado del nombre "Macasoul" (pedido antes, nunca aplicado). Bloqueado: confirmar si todavía la quiere ahí o si alcanza con que sea la primera foto de la página.
 - Links de contacto todavía sin conectar en `src/lib/event-config.ts` (Instagram, WhatsApp de contacto).
+- [ ] Crear píxel nuevo de Meta Ads para la landing (requiere conectar cuenta de Meta primero)
