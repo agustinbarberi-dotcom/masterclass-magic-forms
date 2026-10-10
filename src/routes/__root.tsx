@@ -7,10 +7,11 @@ import {
   HeadContent,
   Scripts,
 } from "@tanstack/react-router";
-import { useEffect, type ReactNode } from "react";
+import { useEffect, useRef, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import { META_PIXEL_NOSCRIPT_SRC, META_PIXEL_SNIPPET, trackPixel } from "../lib/meta-pixel";
 
 function NotFoundComponent() {
   return (
@@ -116,11 +117,17 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en">
+    <html lang="es">
       <head>
         <HeadContent />
+        {META_PIXEL_SNIPPET && <script dangerouslySetInnerHTML={{ __html: META_PIXEL_SNIPPET }} />}
       </head>
       <body>
+        {META_PIXEL_NOSCRIPT_SRC && (
+          <noscript>
+            <img height="1" width="1" style={{ display: "none" }} alt="" src={META_PIXEL_NOSCRIPT_SRC} />
+          </noscript>
+        )}
         {children}
         <Scripts />
       </body>
@@ -130,6 +137,20 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+  const router = useRouter();
+  const lastPath = useRef<string | null>(null);
+
+  // El código base ya registra la primera PageView; acá se registran las
+  // siguientes, cuando la app cambia de página sin recargar.
+  useEffect(() => {
+    lastPath.current = window.location.pathname;
+    return router.subscribe("onResolved", () => {
+      const path = window.location.pathname;
+      if (path === lastPath.current) return;
+      lastPath.current = path;
+      trackPixel("PageView");
+    });
+  }, [router]);
 
   return (
     <QueryClientProvider client={queryClient}>

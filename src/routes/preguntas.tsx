@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate, useRouter } from "@tanstack/react-router";
 import { useEffect, useRef, useState } from "react";
 import { GOOGLE_SCRIPT_URL } from "@/lib/event-config";
+import { trackPixelCustom } from "@/lib/meta-pixel";
 
 export const Route = createFileRoute("/preguntas")({
   component: PreguntasPage,
@@ -122,7 +123,10 @@ function PreguntasPage() {
     setPicked(option);
     setTimeout(() => {
       setPicked(null);
-      if (step + 1 >= QUESTIONS.length) navigate({ to: "/gracias" });
+      if (step + 1 >= QUESTIONS.length) {
+        if (computePrioridad(answers.current) === "ALTA") trackPixelCustom("LeadCalificado");
+        navigate({ to: "/gracias" });
+      }
       else setStep(step + 1);
     }, 220);
   }

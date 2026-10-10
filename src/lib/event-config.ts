@@ -25,6 +25,9 @@ export const EVENT_PLATFORM = "Online";
 export const GOOGLE_SCRIPT_URL =
   "https://script.google.com/macros/s/AKfycbyN1YjJZwBJyA2y6_HyItwp5_zlnnGkqIy7iZqm_ImR2EebRkMXdnBOO5FGTLZj-uQDBQ/exec";
 
+/** ID del píxel de Meta (cuenta publicitaria de Maca). Vacío = sin píxel. */
+export const META_PIXEL_ID = "1729816064767279";
+
 /** Grupo de WhatsApp del evento. */
 export const WHATSAPP_GROUP_URL =
   "https://chat.whatsapp.com/J4tuxHRyRFDBbL9PCjMdHN?mode=gi_t";

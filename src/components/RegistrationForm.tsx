@@ -10,6 +10,7 @@ import {
   EVENT_DATE_LABEL,
 } from "@/lib/event-config";
 import { cn } from "@/lib/utils";
+import { trackPixel } from "@/lib/meta-pixel";
 
 const schema = z.object({
   nombre: z
@@ -140,6 +141,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
         /* ignorar */
       }
 
+      trackPixel("Lead");
       form.reset();
       navigate({ to: "/preguntas" });
     } catch {
