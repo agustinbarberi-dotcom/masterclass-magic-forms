@@ -86,7 +86,7 @@ function GoldButton({
 function EventMeta({ className = "" }: { className?: string }) {
   return (
     <div className={`text-sm font-semibold tracking-wide text-forest ${className}`}>
-      <div className="flex flex-nowrap items-center justify-center gap-x-1.5 text-xs sm:gap-x-2 sm:text-sm">
+      <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 whitespace-nowrap text-xs sm:gap-x-2 sm:text-sm">
         <span className="inline-flex items-center gap-1.5">
           <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
           {EVENT_DAY_LABEL}
@@ -120,7 +120,7 @@ function Index() {
           <div className="flex justify-end">
             <a
               href="#registro"
-              className="rounded-full border border-forest/25 px-4 py-2 text-xs font-semibold tracking-wide text-forest transition-colors hover:bg-forest hover:text-forest-foreground sm:px-5 sm:text-sm"
+              className="whitespace-nowrap rounded-full border border-forest/25 px-4 py-2 text-xs font-semibold tracking-wide text-forest transition-colors hover:bg-forest hover:text-forest-foreground sm:px-5 sm:text-sm"
             >
               Reservar mi lugar
             </a>
@@ -130,7 +130,7 @@ function Index() {
 
 
       {/* HERO — promesa principal */}
-      <section className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-28">
+      <section className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-24">
         <img
           src={heroRoots}
           alt="Raíces de un árbol iluminadas por luz dorada en un bosque"
@@ -150,27 +150,27 @@ function Index() {
               height={480}
               decoding="async"
               fetchPriority="high"
-              className="mx-auto mb-6 h-28 w-28 rounded-full border-2 border-gold/60 object-cover shadow-soft lg:hidden"
+              className="mx-auto mb-4 h-24 w-24 rounded-full border-2 border-gold/60 object-cover shadow-soft lg:hidden"
             />
             <p className="eyebrow">
               Evento exclusivo · {EVENT_DAY_LABEL} · Única vez en el año · Cupos limitados
             </p>
-            <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
+            <h1 className="mt-4 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Comes bien. Te cuidas.
               <br />
               Y tu cuerpo dejó de responderte.
             </h1>
-            <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
               Una clase en vivo para mujeres de más de 40: entiende por qué tu cuerpo cambió las
               reglas y qué hacer esta misma semana.
             </p>
 
 
-            <div className="mt-8 flex justify-center">
+            <div className="mt-5 flex justify-center">
               <EventMeta />
             </div>
 
-            <div className="mt-10">
+            <div className="mt-6">
               <GoldButton className="animate-float px-8 py-4 text-base">Reservar mi lugar</GoldButton>
             </div>
 
