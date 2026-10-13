@@ -86,7 +86,7 @@ function GoldButton({
 function EventMeta({ className = "" }: { className?: string }) {
   return (
     <div className={`text-sm font-semibold tracking-wide text-forest ${className}`}>
-      <div className="flex flex-nowrap items-center justify-center gap-x-1.5 text-xs sm:gap-x-2 sm:text-sm">
+      <div className="flex flex-wrap items-center justify-center gap-x-1.5 gap-y-1 whitespace-nowrap text-xs sm:gap-x-2 sm:text-sm">
         <span className="inline-flex items-center gap-1.5">
           <Calendar className="h-4 w-4 text-gold" aria-hidden="true" />
           {EVENT_DAY_LABEL}
@@ -120,7 +120,7 @@ function Index() {
           <div className="flex justify-end">
             <a
               href="#registro"
-              className="rounded-full border border-forest/25 px-4 py-2 text-xs font-semibold tracking-wide text-forest transition-colors hover:bg-forest hover:text-forest-foreground sm:px-5 sm:text-sm"
+              className="whitespace-nowrap rounded-full border border-forest/25 px-4 py-2 text-xs font-semibold tracking-wide text-forest transition-colors hover:bg-forest hover:text-forest-foreground sm:px-5 sm:text-sm"
             >
               Reservar mi lugar
             </a>
