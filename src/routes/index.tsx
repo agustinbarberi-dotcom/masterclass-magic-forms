@@ -130,7 +130,7 @@ function Index() {
 
 
       {/* HERO — promesa principal */}
-      <section className="relative overflow-hidden pt-28 pb-24 sm:pt-32 sm:pb-28">
+      <section className="relative overflow-hidden pt-24 pb-16 sm:pt-28 sm:pb-24">
         <img
           src={heroRoots}
           alt="Raíces de un árbol iluminadas por luz dorada en un bosque"
@@ -150,27 +150,27 @@ function Index() {
               height={480}
               decoding="async"
               fetchPriority="high"
-              className="mx-auto mb-6 h-28 w-28 rounded-full border-2 border-gold/60 object-cover shadow-soft lg:hidden"
+              className="mx-auto mb-4 h-24 w-24 rounded-full border-2 border-gold/60 object-cover shadow-soft lg:hidden"
             />
             <p className="eyebrow">
               Evento exclusivo · {EVENT_DAY_LABEL} · Única vez en el año · Cupos limitados
             </p>
-            <h1 className="mt-6 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
+            <h1 className="mt-4 text-[2.2rem] font-black leading-[0.98] tracking-tight text-forest sm:text-5xl lg:text-[3.6rem]">
               Comes bien. Te cuidas.
               <br />
               Y tu cuerpo dejó de responderte.
             </h1>
-            <p className="mx-auto mt-7 max-w-xl text-base text-muted-foreground sm:text-lg">
+            <p className="mx-auto mt-5 max-w-xl text-base text-muted-foreground sm:text-lg">
               Una clase en vivo para mujeres de más de 40: entiende por qué tu cuerpo cambió las
               reglas y qué hacer esta misma semana.
             </p>
 
 
-            <div className="mt-8 flex justify-center">
+            <div className="mt-5 flex justify-center">
               <EventMeta />
             </div>
 
-            <div className="mt-10">
+            <div className="mt-6">
               <GoldButton className="animate-float px-8 py-4 text-base">Reservar mi lugar</GoldButton>
             </div>
 
