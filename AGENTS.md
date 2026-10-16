@@ -8,3 +8,5 @@
 > Commits you push to the connected branch sync back to Lovable and show up in
 > the editor, so keep the branch in a working state.
 <!-- LOVABLE:END -->
+
+- Registration preloads and navigates directly to `/gracias`, keeping the registration POST in the background so the WhatsApp step appears immediately.

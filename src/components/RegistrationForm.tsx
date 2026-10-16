@@ -43,7 +43,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
 
   // Precarga la página de gracias para que la redirección sea instantánea
   useEffect(() => {
-    router.preloadRoute({ to: "/preguntas" }).catch(() => {});
+    router.preloadRoute({ to: "/gracias" }).catch(() => {});
   }, [router]);
 
   // Relleno automático: recupera los datos guardados del navegador
@@ -143,7 +143,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
 
       trackPixel("Lead");
       form.reset();
-      navigate({ to: "/preguntas" });
+      navigate({ to: "/gracias" });
     } catch {
       setStatus("error");
       setFormError("No pudimos enviar tu registro. Intenta de nuevo en unos segundos.");
