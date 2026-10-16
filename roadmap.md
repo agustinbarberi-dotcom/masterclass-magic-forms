@@ -9,5 +9,6 @@
 - En celular, la línea de fecha/hora/Online/Cupos limitados cortaba palabras a la mitad: ahora cada dato queda en una sola línea y la fila se quiebre limpia en dos. En pantalla ancha sigue en una línea.
 
 ## Pendiente
+- Añadir estadísticas privadas solo para agustinbarberi@gmail.com: opt-in, gracias y orígenes del tráfico; mantener el envío y el salto instantáneo.
 - Foto chica en el encabezado, al costado del nombre "Macasoul" (pedido antes, nunca aplicado). Bloqueado: confirmar si todavía la quiere ahí o si alcanza con que sea la primera foto de la página.
 - Links de contacto todavía sin conectar en `src/lib/event-config.ts` (Instagram, WhatsApp de contacto).
