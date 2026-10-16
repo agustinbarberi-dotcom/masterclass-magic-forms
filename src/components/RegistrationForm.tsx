@@ -11,6 +11,7 @@ import {
 } from "@/lib/event-config";
 import { cn } from "@/lib/utils";
 import { trackPixel } from "@/lib/meta-pixel";
+import { trackEvent } from "@/lib/tracking";
 
 const schema = z.object({
   nombre: z
@@ -142,6 +143,7 @@ export function RegistrationForm({ id, tone = "light" }: { id: string; tone?: "l
       }
 
       trackPixel("Lead");
+      trackEvent("optin");
       form.reset();
       navigate({ to: "/gracias" });
     } catch {

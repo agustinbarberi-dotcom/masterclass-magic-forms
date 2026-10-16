@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { captureAttribution, trackEvent } from "@/lib/tracking";
 import { Reveal } from "@/components/Reveal";
 import { RegistrationForm } from "@/components/RegistrationForm";
 
@@ -105,6 +107,11 @@ function EventMeta({ className = "" }: { className?: string }) {
 }
 
 function Index() {
+  useEffect(() => {
+    captureAttribution();
+    trackEvent("visita", true);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
       {/* HEADER FIJO */}

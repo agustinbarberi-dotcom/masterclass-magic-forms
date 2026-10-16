@@ -10,12 +10,20 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as EstadisticasRouteImport } from './routes/estadisticas'
 import { Route as GraciasRouteImport } from './routes/gracias'
 import { Route as PreguntasRouteImport } from './routes/preguntas'
+import { Route as ApiEstadisticasRouteImport } from './routes/api/estadisticas'
+import { Route as ApiTrackRouteImport } from './routes/api/track'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EstadisticasRoute = EstadisticasRouteImport.update({
+  id: '/estadisticas',
+  path: '/estadisticas',
   getParentRoute: () => rootRouteImport,
 } as any)
 const GraciasRoute = GraciasRouteImport.update({
@@ -28,35 +36,76 @@ const PreguntasRoute = PreguntasRouteImport.update({
   path: '/preguntas',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiEstadisticasRoute = ApiEstadisticasRouteImport.update({
+  id: '/api/estadisticas',
+  path: '/api/estadisticas',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ApiTrackRoute = ApiTrackRouteImport.update({
+  id: '/api/track',
+  path: '/api/track',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/estadisticas': typeof EstadisticasRoute
   '/gracias': typeof GraciasRoute
   '/preguntas': typeof PreguntasRoute
+  '/api/estadisticas': typeof ApiEstadisticasRoute
+  '/api/track': typeof ApiTrackRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/estadisticas': typeof EstadisticasRoute
   '/gracias': typeof GraciasRoute
   '/preguntas': typeof PreguntasRoute
+  '/api/estadisticas': typeof ApiEstadisticasRoute
+  '/api/track': typeof ApiTrackRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/estadisticas': typeof EstadisticasRoute
   '/gracias': typeof GraciasRoute
   '/preguntas': typeof PreguntasRoute
+  '/api/estadisticas': typeof ApiEstadisticasRoute
+  '/api/track': typeof ApiTrackRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/gracias' | '/preguntas'
+  fullPaths:
+    | '/'
+    | '/estadisticas'
+    | '/gracias'
+    | '/preguntas'
+    | '/api/estadisticas'
+    | '/api/track'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/gracias' | '/preguntas'
-  id: '__root__' | '/' | '/gracias' | '/preguntas'
+  to:
+    | '/'
+    | '/estadisticas'
+    | '/gracias'
+    | '/preguntas'
+    | '/api/estadisticas'
+    | '/api/track'
+  id:
+    | '__root__'
+    | '/'
+    | '/estadisticas'
+    | '/gracias'
+    | '/preguntas'
+    | '/api/estadisticas'
+    | '/api/track'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  EstadisticasRoute: typeof EstadisticasRoute
   GraciasRoute: typeof GraciasRoute
   PreguntasRoute: typeof PreguntasRoute
+  ApiEstadisticasRoute: typeof ApiEstadisticasRoute
+  ApiTrackRoute: typeof ApiTrackRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -66,6 +115,13 @@ declare module '@tanstack/react-router' {
       path: '/'
       fullPath: '/'
       preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/estadisticas': {
+      id: '/estadisticas'
+      path: '/estadisticas'
+      fullPath: '/estadisticas'
+      preLoaderRoute: typeof EstadisticasRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/gracias': {
@@ -82,13 +138,30 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof PreguntasRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/estadisticas': {
+      id: '/api/estadisticas'
+      path: '/api/estadisticas'
+      fullPath: '/api/estadisticas'
+      preLoaderRoute: typeof ApiEstadisticasRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/api/track': {
+      id: '/api/track'
+      path: '/api/track'
+      fullPath: '/api/track'
+      preLoaderRoute: typeof ApiTrackRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  EstadisticasRoute: EstadisticasRoute,
   GraciasRoute: GraciasRoute,
   PreguntasRoute: PreguntasRoute,
+  ApiEstadisticasRoute: ApiEstadisticasRoute,
+  ApiTrackRoute: ApiTrackRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

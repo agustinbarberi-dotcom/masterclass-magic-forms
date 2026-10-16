@@ -1,4 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useEffect } from "react";
+import { trackEvent } from "@/lib/tracking";
 import { EVENT_DAY_LABEL, WHATSAPP_GROUP_URL } from "@/lib/event-config";
 
 export const Route = createFileRoute("/gracias")({
@@ -48,6 +50,10 @@ function ProgressBar({ value = 80 }: { value?: number }) {
 }
 
 function GraciasPage() {
+  useEffect(() => {
+    trackEvent("gracias", true);
+  }, []);
+
   const eventMeta = `Evento exclusivo  ·  ${EVENT_DAY_LABEL}  ·  Única vez en el año`;
 
   return (
