@@ -20,10 +20,9 @@ export const Route = createFileRoute("/api/track")({
         const event = str(body.event, 20);
         if (!event || !EVENTS.has(event)) return new Response(null, { status: 400 });
         try {
-          const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const { error } = await (supabaseAdmin as any).from("landing_events").insert({
-            event,
+          const { recordEvent } = await import("@/lib/stats-store.server");
+          await recordEvent({
+            event: event as "visita" | "optin" | "gracias",
             visitor_id: str(body.visitor_id, 60),
             utm_source: str(body.utm_source),
             utm_medium: str(body.utm_medium),
@@ -31,12 +30,7 @@ export const Route = createFileRoute("/api/track")({
             utm_content: str(body.utm_content),
             fbclid: body.fbclid === true,
             referrer_host: str(body.referrer_host),
-            path: str(body.path, 100),
           });
-          if (error) {
-            console.error("track", error.message);
-            return new Response(null, { status: 500 });
-          }
         } catch (e) {
           console.error("track", e);
           return new Response(null, { status: 500 });

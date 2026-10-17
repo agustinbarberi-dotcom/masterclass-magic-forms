@@ -40,25 +40,13 @@ export const Route = createFileRoute("/api/estadisticas")({
         const key = new URL(request.url).searchParams.get("k");
         if (!isValidStatsKey(key)) return new Response("No autorizado", { status: 401 });
 
-        const rows: Row[] = [];
+        let rows: Row[] = [];
         try {
-          const { supabaseAdmin } = await import("@/integrations/supabase/client.server");
-          for (let from = 0; from < 100000; from += 1000) {
-            // eslint-disable-next-line @typescript-eslint/no-explicit-any
-            const { data, error } = await (supabaseAdmin as any)
-              .from("landing_events")
-              .select(
-                "created_at,event,visitor_id,utm_source,utm_medium,utm_campaign,utm_content,fbclid,referrer_host",
-              )
-              .order("created_at", { ascending: true })
-              .range(from, from + 999);
-            if (error) return Response.json({ error: error.message }, { status: 500 });
-            rows.push(...(data as Row[]));
-            if (!data || data.length < 1000) break;
-          }
+          const { readEvents } = await import("@/lib/stats-store.server");
+          rows = await readEvents();
         } catch (e) {
           return Response.json(
-            { error: e instanceof Error ? e.message : "Error leyendo la base" },
+            { error: e instanceof Error ? e.message : "Error leyendo los datos" },
             { status: 500 },
           );
         }

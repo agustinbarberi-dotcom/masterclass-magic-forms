@@ -9,6 +9,6 @@
 - En celular, la línea de fecha/hora/Online/Cupos limitados cortaba palabras a la mitad: ahora cada dato queda en una sola línea y la fila se quiebre limpia en dos. En pantalla ancha sigue en una línea.
 
 ## Pendiente
-- Estadísticas privadas: falta crear la tabla `landing_events` en Lovable Cloud con `supabase/migrations/20261016_landing_events.sql`. El código ya registra visita, opt-in y gracias (`/api/track`) y la página es `/estadisticas?k=<clave privada>`; la clave no está en el repo, solo su hash en `src/lib/stats-key.server.ts`.
+- Estadísticas privadas en `/estadisticas?k=<clave privada>`: los eventos (visita, opt-in, gracias) se guardan como archivos en el bucket privado `landing-stats` de Lovable Cloud (`src/lib/stats-store.server.ts`), sin tabla. La migración `supabase/migrations/20261016_landing_events.sql` quedó sin uso.
 - Foto chica en el encabezado, al costado del nombre "Macasoul" (pedido antes, nunca aplicado). Bloqueado: confirmar si todavía la quiere ahí o si alcanza con que sea la primera foto de la página.
 - Links de contacto todavía sin conectar en `src/lib/event-config.ts` (Instagram, WhatsApp de contacto).
